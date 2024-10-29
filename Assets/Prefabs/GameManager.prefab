@@ -45,4 +45,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PlayerPreFab: {fileID: 3375663572300106800, guid: 743d7fb391a1f3a4d92078f3b2324366, type: 3}
+  EnemyManagerPreFab: {fileID: 6190444301668518998, guid: afc1189f49dbfce419422d51f6d3973a, type: 3}
+  ItemManagerPreFab: {fileID: -8474020454193585116, guid: 876c40680b725144d85ab71a1176a070, type: 3}
   MapManagerPreFab: {fileID: -2669769873952706728, guid: 6b74985e155eaa245aba62ac6f0120cb, type: 3}

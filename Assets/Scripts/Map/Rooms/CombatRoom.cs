@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class CombatRoom : RoomBase {
+    /*
     int timesSearched = 0;
     public static bool doesPlayerWon = false;
     bool userWantsToFight = false;
@@ -28,13 +29,13 @@ public class CombatRoom : RoomBase {
             /*
             userAnswer = (Console.ReadLine() ?? "").ToLower();
             */
-
+    /*
             switch (userAnswer) {
                 case "y":
                 case "yes":
                     userWantsToFight = true;
                     // Create a variable enemy that is assign to the RandomEnemy() function
-                    Enemy enemy = Enemy.RandomEnemy();
+                    Enemy enemy = Enemy.RandomEnemy(); // get a random enemy class
 
                     // Display message of which enemy the player is fighting against
                     Debug.Log($"You are fighting against the {enemy.EnemyName}");
@@ -82,5 +83,5 @@ public class CombatRoom : RoomBase {
             Debug.Log("Nothing more on this room!");
         }
     }
-
+*/
 }

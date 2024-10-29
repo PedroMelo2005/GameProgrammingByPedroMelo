@@ -3,15 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class WhiteSnow : Enemy {
+    internal override int initialLife { get; } = 40;
     public override string EnemyName { get; } = "White Snow";
 
-    public WhiteSnow() : base(40) { } // Class WhiteSnow initializes with 40 life points
-
     // Method Attack return the random value of method Attack
-    public override int Attack() {
+    public override void Attack(ref int damage) {
         dice.NumberOfSides = 16;
-        int attackDamage = dice.Roll();
-        Debug.Log($"{EnemyName} poisoned you and deals {attackDamage} damage to you.");
-        return attackDamage;
-    }
+        damage = dice.Roll();
+        Debug.Log($"{EnemyName} poisoned you and deals {damage} damage to you.");
+     }
 }

@@ -27,12 +27,12 @@ public class Inventory {
 
         // For loop that add 15 times "new LightSaber()" 15% of chance to be dropped
         for (int i = 0; i < 15; i++) {
-            itemList.Add(new LightSaber());
+            itemList.Add(new Spear());
         }
 
         // For loop that add 5 times "new SupermanPower()" 5% of chance to be dropped
         for (int i = 0; i < 5; i++) {
-            itemList.Add(new Mjolnir());
+            itemList.Add(new Axe());
         }
 
         return itemList[Random.Range(0, itemList.Count)]; // return a random item of itemList

@@ -41,6 +41,7 @@ public class Player : MonoBehaviour {
 
     // Function ResetPlayerStats that reset the player's life and player's inventory
     public void ResetPlayerStats() {
+        Debug.Log("Resetting Player Stats"); // DEBUG
         PlayerLife = _maxPlayerLife;
         IsPlayerAlive = true;
         InventoryInstance.InventoryList.Clear();

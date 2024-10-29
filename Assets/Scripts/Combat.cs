@@ -4,12 +4,16 @@ using UnityEditor;
 using UnityEngine;
 
 public class Combat {
-    DiceRoller dice = new DiceRoller();
+    /*
+    int playerHeal = 0;
+    int playerDamage = 0;
+    int enemyDamage = 0;
+
+    // Create Instances
+    DiceRoller dice = new DiceRoller(); // dice Instance
 
     // Function PlayerTurn
     public void PlayerTurn(Enemy enemy) {
-        int playerHeal = 0;
-        int playerDamage = 0;
         int choice = 0;
         bool validChoice = false;
         string userInput = "";
@@ -37,6 +41,7 @@ public class Combat {
                 /*
                 userInput = (Console.ReadLine() ?? "");
                 */
+    /*
                 // If player input is greater or equal 1 and the choice is less or equal the number of weapons in the List the variable validChoice is true
                 if (int.TryParse(userInput, out choice) && choice >= 1 && choice <= consumables.Count + 1) {
                     validChoice = true; // Reassign validChoice to true
@@ -87,6 +92,7 @@ public class Combat {
                 /*
                 userInput = (Console.ReadLine() ?? "");
                 */
+    /*
                 // If player input is greater or equal 1 and the choice is less or equal the number of weapons in the List the variable validChoice is true
                 if (int.TryParse(userInput, out choice) && choice >= 1 && choice <= weapons.Count + 1) {
                     validChoice = true; // Reassign validChoice to true
@@ -122,7 +128,7 @@ public class Combat {
 
     //Function EnemyTurn
     public void EnemyTurn(Enemy enemy) {
-        int enemyDamage = enemy.Attack(); // Assign enemy.Attack to enemyDamage
+        enemy.Attack(ref enemyDamage); // Assign enemy.Attack to enemyDamage
                                           // Call function player.TakeDamage
         GameManager.player.TakeDamage(enemyDamage);
     }
@@ -142,5 +148,6 @@ public class Combat {
             CombatRoom.doesPlayerWon = false;
         }
     }
+*/
 
 }
