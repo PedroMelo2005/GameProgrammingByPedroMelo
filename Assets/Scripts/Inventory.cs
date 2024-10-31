@@ -2,45 +2,57 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Inventory {
-    public List<Item> InventoryList = new List<Item>();
+public class Inventory : MonoBehaviour {
+    // Create the Instances
+    public static Inventory Instance; // Global Static "Instance" instance of type "Inventory"
 
-    // Method that return a random item of itemList
+    // Create Lists
+    public List<Item> InventoryList = new List<Item>(); // Public List "InventoryList" of type "Item"
+
+    /*
+    [SerializeField] Dagger daggerPrefab;
+    [SerializeField] LongSword longSwordPrefab;
+    [SerializeField] Spear spearPrefab;
+    [SerializeField] Axe axePrefab;
+    [SerializeField] HealPotion healPotionPrefab;
+
+    // Method that return a random item of "itemList"
     Item RandomItem() {
         // Create a List that has probability of drop items
         List<Item> itemList = new List<Item>();
 
-        // For loop that add 20 times "new HealPotion()" 20% of chance to be dropped
+        // For loop that add 20 times "healPotionPrefab" 20% of chance to be dropped
         for (int i = 0; i < 20; i++) {
-            itemList.Add(new HealPotion());
+            itemList.Add(healPotionPrefab);
         }
 
-        // For loop that add 30 times "new Dagger()" 30% of chance to be dropped
+        // For loop that add 30 times "daggerPrefab" 30% of chance to be dropped
         for (int i = 0; i < 30; i++) {
-            itemList.Add(new Dagger());
+            itemList.Add(daggerPrefab);
         }
 
-        // For loop that add 30 times "new LongSword()" 30% of chance to be dropped
+        // For loop that add 30 times "longSwordPrefab" 30% of chance to be dropped
         for (int i = 0; i < 30; i++) {
-            itemList.Add(new LongSword());
+            itemList.Add(longSwordPrefab);
         }
 
-        // For loop that add 15 times "new LightSaber()" 15% of chance to be dropped
+        // For loop that add 15 times "spearPrefab" 15% of chance to be dropped
         for (int i = 0; i < 15; i++) {
-            itemList.Add(new Spear());
+            itemList.Add(spearPrefab);
         }
 
-        // For loop that add 5 times "new SupermanPower()" 5% of chance to be dropped
+        // For loop that add 5 times "axePrefab" 5% of chance to be dropped
         for (int i = 0; i < 5; i++) {
-            itemList.Add(new Axe());
+            itemList.Add(axePrefab);
         }
 
         return itemList[Random.Range(0, itemList.Count)]; // return a random item of itemList
     }
+    */
 
     // Function AddItemToInventory that add item to the inventory
     public void AddItemToInventory(ref string itemFound) {
-        Item item = RandomItem(); // Assign the RandomItem() to local variable "item"
+        Item item = ItemManager.Instance.RandomItem(); // Assign the "RandomItem()" to local variable "item"
         InventoryList.Add(item); // Add RandomItem() to InventoryList
         itemFound = item.ItemName; // Assign RandomItem().ItemName to itemFound
     }

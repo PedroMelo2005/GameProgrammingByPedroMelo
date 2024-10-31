@@ -49,7 +49,7 @@ public class PuzzleRoom : RoomBase {
 
             // If loop that check if the answer is correct
             if (puzzleAnswer == puzzlesAnswerList[index]) {
-                Debug.Log($"Good job {GameManager.player.PlayerName} your answer is correct!");
+                Debug.Log($"Good job {Player.Instance.PlayerName} your answer is correct!");
                 Debug.Log("Try to search for an item");
                 puzzleIsCorrect = true;
                 puzzlesTimes++;
@@ -64,31 +64,31 @@ public class PuzzleRoom : RoomBase {
                 puzzleAnswer = (Console.ReadLine() ?? "");
                 */
                 if (puzzleAnswer == puzzlesAnswerList[index]) {
-                    Debug.Log($"Good job {GameManager.player.PlayerName} your answer is correct!");
+                    Debug.Log($"Good job {Player.Instance.PlayerName} your answer is correct!");
                     Debug.Log("Try to search for an item");
                     puzzleIsCorrect = true;
                     puzzlesTimes++;
                 }
                 else {
-                    Debug.Log($"Hahaha. {GameManager.player.PlayerName} your answer is wrong again!");
+                    Debug.Log($"Hahaha. {Player.Instance.PlayerName} your answer is wrong again!");
                     puzzlesTimes++;
                 }
             }
         }
         else {
-            Debug.Log($"{GameManager.player.PlayerName} you can't try to solve puzzles more than 3 times");
+            Debug.Log($"{Player.Instance.PlayerName} you can't try to solve puzzles more than 3 times");
         }
     }
 
     public override void OnRoomSearched() {
         if (puzzleIsCorrect && timesSearched < 3) {
             // Call function AddItemToInventory
-            GameManager.player.InventoryInstance.AddItemToInventory(ref itemFound);
+            Inventory.Instance.AddItemToInventory(ref itemFound);
             Debug.Log($"You found: {itemFound}");
             timesSearched++;
         }
         else if (puzzleIsCorrect && timesSearched >= 3) {
-            Debug.Log($"{GameManager.player.PlayerName} you can't search more than 3 times on {roomName}");
+            Debug.Log($"{Player.Instance.PlayerName} you can't search more than 3 times on {roomName}");
         }
         else {
             Debug.Log("Nothing more on this room!");

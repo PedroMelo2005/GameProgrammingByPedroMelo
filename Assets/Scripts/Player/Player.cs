@@ -4,14 +4,14 @@ using Unity.Hierarchy;
 using UnityEngine;
 
 public class Player : MonoBehaviour {
+    // Create Instances
+    public static Player Instance; // Global Static "Instance" instance of type "Player"
+
     public string PlayerName = "";
     public const int _maxPlayerLife = 50;
     public const int _minPlayerLife = 0;
     public int PlayerLife = _maxPlayerLife;
     public bool IsPlayerAlive = true;
-
-    // Create instances
-    public Inventory InventoryInstance = new Inventory(); // InventoryInstance Instance
 
     // Function GetPlayerLife that display the player's life
     public void GetPlayerLife() {
@@ -44,6 +44,13 @@ public class Player : MonoBehaviour {
         Debug.Log("Resetting Player Stats"); // DEBUG
         PlayerLife = _maxPlayerLife;
         IsPlayerAlive = true;
-        InventoryInstance.InventoryList.Clear();
+
+        /*
+        // If the "InventoryList" has 1 item or more will clear the "InventoryList"
+        if (Inventory.Instance.InventoryList.Count > 0) {
+        Inventory.Instance.InventoryList.Clear();
+        }
+        */
     }
+
 }

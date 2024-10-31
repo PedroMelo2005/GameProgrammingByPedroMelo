@@ -14,12 +14,12 @@ public class TreasureRoom : RoomBase {
     public override void OnRoomSearched() {
         if (timesSearched < 3) {
             // Call function AddItemToInventory
-            GameManager.player.InventoryInstance.AddItemToInventory(ref itemFound);
+            Inventory.Instance.AddItemToInventory(ref itemFound);
             Debug.Log($"You found: {itemFound}");
             timesSearched++;
         }
         else if (timesSearched >= 3) {
-            Debug.Log($"{GameManager.player.PlayerName} you can't search more than 3 times on {roomName}");
+            Debug.Log($"{Player.Instance.PlayerName} you can't search more than 3 times on {roomName}");
         }
         else {
             Debug.Log("Nothing more on this room!");

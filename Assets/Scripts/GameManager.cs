@@ -3,16 +3,17 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour {
-    // Create classes variables
-    public static Player player; // Global player variable
-    private Player _player; // Private _player variable
-    private EnemyManager _enemyManager; // Private _enemyManager variable
-    private ItemManager _itemManager; // Private _itemManager variable
-    private MapManager _gameMap; // Private _gameMap variable
+    // Create Instances
+    private Player _player; // Private "_player" instance
+    private EnemyManager _enemyManager; // Private "_enemyManager" instance
+    private ItemManager _itemManager; // Private "_itemManager" instance
+    private Inventory _inventory; // Private "_inventory" instance
+    private MapManager _gameMap; // Private "_gameMap" instance
 
     [SerializeField] Player PlayerPreFab;
     [SerializeField] EnemyManager EnemyManagerPreFab;
     [SerializeField] ItemManager ItemManagerPreFab;
+    [SerializeField] Inventory InventoryManagerPrefab;
     [SerializeField] MapManager MapManagerPreFab;
 
 
@@ -34,9 +35,8 @@ public class GameManager : MonoBehaviour {
         _player = Instantiate(PlayerPreFab, transform);
         _enemyManager = Instantiate(EnemyManagerPreFab, transform);
         _itemManager = Instantiate(ItemManagerPreFab, transform);
+        _inventory = Instantiate(InventoryManagerPrefab, transform);
         _gameMap = Instantiate(MapManagerPreFab, transform);
-
-        player = _player; // Assign variable _player to player
     }
     
     void SetUpOnEverything() {
