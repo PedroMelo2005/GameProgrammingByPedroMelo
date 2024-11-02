@@ -3,15 +3,19 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class ItemManager : MonoBehaviour {
-    // Create the Instances
-    public static ItemManager Instance; // Global Static "Instance" instance of type "ItemManager"
-    private Item _item; // Private "_item" instance of type "Item"
-
     [SerializeField] Dagger daggerPrefab;
     [SerializeField] LongSword longSwordPrefab;
     [SerializeField] Spear spearPrefab;
     [SerializeField] Axe axePrefab;
     [SerializeField] HealPotion healPotionPrefab;
+
+    // Create the Instances
+    public static ItemManager Instance; // Global Static "Instance" instance of type "ItemManager"
+    private Item _item; // Private "_item" instance of type "Item"
+
+    public void SetUpItemManager() {
+        Debug.Log("SetUp the \"ItemManager\""); // DEBUG
+    }
 
     // Method that return a random item of "itemList"
     public Item RandomItem() {

@@ -3,19 +3,19 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class EnemyManager : MonoBehaviour {
-    public static Enemy enemyInstance;
+    [SerializeField] Enemy knightPrefab;
+    [SerializeField] Enemy bearPrefab;
+    [SerializeField] Enemy whiteSnowPrefab;
+    [SerializeField] Enemy batmanPrefab;
+
     private Enemy _enemy;
 
-    [SerializeField] Knight knightPrefab;
-    [SerializeField] Bear bearPrefab;
-    [SerializeField] WhiteSnow whiteSnowPrefab;
-    [SerializeField] Batman batmanPrefab;
-
-    // Create a List "enemyList" of type GameObject
+    // Create a List "enemyList" of type "Enemy"
     public List<Enemy> enemyList;
 
-    // Create function "SetUpEnemy()"
-    public void SetUpEnemy() {
+    // Create function "SetUpEnemyManager()"
+    public void SetUpEnemyManager() {
+        Debug.Log("SetUp the \"EnemyManager\""); // DEBUG
         // Initialize the "enemyList"
         Debug.Log("Initialize the \"enemyList\""); // DEBUG
         enemyList = new List<Enemy> { knightPrefab, bearPrefab, whiteSnowPrefab, batmanPrefab };
@@ -23,8 +23,7 @@ public class EnemyManager : MonoBehaviour {
 
     public void CreateEnemy() {
         _enemy = selectedEnemyPrefab();
-        enemyInstance = _enemy;
-        _enemy = Instantiate(enemyInstance, transform);
+        _enemy = Instantiate(_enemy);
         _enemy.transform.position = new Vector3(0, 0, 0);
 
         /*
@@ -77,4 +76,5 @@ public class EnemyManager : MonoBehaviour {
             return null;
         }
     }
+
 }

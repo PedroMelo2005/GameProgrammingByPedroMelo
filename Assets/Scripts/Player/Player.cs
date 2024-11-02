@@ -4,14 +4,31 @@ using Unity.Hierarchy;
 using UnityEngine;
 
 public class Player : MonoBehaviour {
+    [SerializeField] private PlayerMovement _playerMovementScript;
+    [SerializeField] private PlayerCamera _playerCameraScript;
+    [SerializeField] private PlayerCollision _playerCollisionScript;
+    public Rigidbody PhysicsBody;
+
     // Create Instances
     public static Player Instance; // Global Static "Instance" instance of type "Player"
+    MapManager mapManager;
+    InventoryManager inventoryManager;
+    ItemManager itemManager;
+    EnemyManager enemyManager;
 
     public string PlayerName = "";
     public const int _maxPlayerLife = 50;
     public const int _minPlayerLife = 0;
     public int PlayerLife = _maxPlayerLife;
     public bool IsPlayerAlive = true;
+
+    public void SetUpPlayer(MapManager mapManager, InventoryManager inventoryManager, ItemManager itemManager, EnemyManager enemyManager) {
+        Debug.Log("SetUp the \"Player\"");
+        this.mapManager = mapManager;
+        this.inventoryManager = inventoryManager;
+        this.itemManager = itemManager;
+        this.enemyManager = enemyManager;
+    }
 
     // Function GetPlayerLife that display the player's life
     public void GetPlayerLife() {
