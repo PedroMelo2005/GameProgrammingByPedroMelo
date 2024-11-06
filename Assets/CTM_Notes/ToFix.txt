@@ -1,8 +1,10 @@
 CTM Notes is a note of (Corrections To Make) --> Coded by Pedro Melo <--
 
 
-1- Fix the PuzzleRoom riddles messages
+1- Fix the CombatRoom (is not working right now with the code of the console game assignment)
 
-2- Fix how you access variables and funciton of other scripts. (how to create "global varibles")
+2- Fix the PuzzleRoom riddles messages
 
-3- 
+3- Fix how you access variables and funciton of other scripts. (how to create "global varibles")
+
+4- 
