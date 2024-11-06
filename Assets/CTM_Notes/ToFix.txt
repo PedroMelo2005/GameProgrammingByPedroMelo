@@ -1,0 +1,8 @@
+CTM Notes is a note of (Corrections To Make) --> Coded by Pedro Melo <--
+
+
+1- Fix the PuzzleRoom riddles messages
+
+2- Fix how you access variables and funciton of other scripts. (how to create "global varibles")
+
+3- 

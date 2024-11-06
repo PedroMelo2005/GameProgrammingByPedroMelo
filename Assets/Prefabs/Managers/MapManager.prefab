@@ -1,0 +1,51 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &2456814836191714674
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1916794532988858258}
+  - component: {fileID: -2669769873952706728}
+  m_Layer: 0
+  m_Name: MapManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1916794532988858258
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2456814836191714674}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &-2669769873952706728
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2456814836191714674}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 004e0f24ef5270d47b2405551a3c4cbf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  welcomeRoomPrefab: {fileID: 7255210666869569759, guid: 5a0f5e0a0ed62da4d8d7d5c622ad75e3, type: 3}
+  combatRoomPrefab: {fileID: -1815699339342591347, guid: 8ccfb708dcbbb6e47ab00e7e41ce75fc, type: 3}
+  treasureRoomPrefab: {fileID: -3139151052299084388, guid: e3b38d28492ef6d42aba947869ac4e8d, type: 3}
+  puzzleRoomPrefab: {fileID: 3655894212292544645, guid: ee41e65b12643f648a0d57e0b7be5ea5, type: 3}
+  MapSize: 3
