@@ -41,7 +41,8 @@ public class Combat {
                 /*
                 userInput = (Console.ReadLine() ?? "");
                 */
-    /*
+    
+                /*
                 // If player input is greater or equal 1 and the choice is less or equal the number of weapons in the List the variable validChoice is true
                 if (int.TryParse(userInput, out choice) && choice >= 1 && choice <= consumables.Count + 1) {
                     validChoice = true; // Reassign validChoice to true
@@ -92,7 +93,8 @@ public class Combat {
                 /*
                 userInput = (Console.ReadLine() ?? "");
                 */
-    /*
+    
+                /*
                 // If player input is greater or equal 1 and the choice is less or equal the number of weapons in the List the variable validChoice is true
                 if (int.TryParse(userInput, out choice) && choice >= 1 && choice <= weapons.Count + 1) {
                     validChoice = true; // Reassign validChoice to true
@@ -149,5 +151,4 @@ public class Combat {
         }
     }
 */
-
 }

@@ -50,6 +50,8 @@ public class GameManager : MonoBehaviour {
     void OnGameStart() {
         // Call function CreateMap
         _mapManager.CreateMap();
+        //Call function SpawnPlayer
+        _playerManager.SpawnPlayer();
     }
 
 }

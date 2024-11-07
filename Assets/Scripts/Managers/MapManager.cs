@@ -9,8 +9,9 @@ public class MapManager : MonoBehaviour {
     [SerializeField] RoomBase treasureRoomPrefab;
     [SerializeField] RoomBase puzzleRoomPrefab;
 
-    public int MapSize = 3;
-    public const int RoomSize = 6;
+    public const int MapSize = 5; // size of the map
+    public const int RoomSize = 10; // size of the rooms prefab
+    public const float StartingLocation = (((MapSize - 1) * RoomSize) / 2); // Location at the center of the map
 
     readonly Dictionary<Vector2, RoomBase> _rooms = new();
     public Dictionary<Vector2, RoomBase> Rooms => _rooms;
@@ -26,13 +27,12 @@ public class MapManager : MonoBehaviour {
     }
 
     public void CreateMap() {
-        // midPoint represents the center of the grid
-        int midPoint = (MapSize - 1) / 2;
+        int midPoint = ((MapSize - 1) / 2); // "midPoint" represents the center of the grid
 
         for (int x = 0; x < MapSize; x++) {
             for (int z = 0; z < MapSize; z++) {
                 Vector2 coords = new Vector2(x * RoomSize, z * RoomSize);
-                 RoomBase roomInstance = null;
+                RoomBase roomInstance = null;
 
                 // If is in on the center of the grid will run this code
                 if (x == midPoint && z == midPoint) {
@@ -42,7 +42,6 @@ public class MapManager : MonoBehaviour {
                 else {
                     roomInstance = Instantiate(selectedRoomPrefab(), transform);
                 }
-
                 roomInstance.SetRoomLocation(coords);
                 _rooms.Add(coords, roomInstance);
             }
@@ -125,10 +124,6 @@ public class MapManager : MonoBehaviour {
             }
         }
         Debug.Log("Ending loop to VisualizeMap"); // DEBUG
-    }
-
-    public void SetupPlayer() {
-
     }
 
     RoomBase selectedRoomPrefab() {

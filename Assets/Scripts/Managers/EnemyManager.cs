@@ -21,10 +21,11 @@ public class EnemyManager : MonoBehaviour {
         enemyList = new List<Enemy> { knightPrefab, bearPrefab, whiteSnowPrefab, batmanPrefab };
     }
 
-    public void CreateEnemy() {
+    public void CreateEnemy(Enemy enemy) {
         _enemy = selectedEnemyPrefab();
         _enemy = Instantiate(_enemy);
         _enemy.transform.position = new Vector3(0, 0, 0);
+        enemy = _enemy;
 
         /*
         Enemy randomEnemyInstance = selectedEnemyPrefab();

@@ -26,11 +26,11 @@ public class RoomBase : MonoBehaviour {
         this.enemyManager = enemyManager;
     }
 
-    public virtual void SetRoomLocation(Vector2 coordinates) {
+    public void SetRoomLocation(Vector2 coordinates) {
         // X, Z plane
         transform.position = new Vector3(coordinates.x, 0, coordinates.y);
         _roomPosition = coordinates;
-        Debug.Log("Room " + _roomPosition + " Created!"); // DEBUG
+        Debug.Log("Room created at:" + _roomPosition); // DEBUG
     }
 
     public void SetRooms(RoomBase roomNorth, RoomBase roomEast, RoomBase roomSouth, RoomBase roomWest) {
@@ -48,11 +48,11 @@ public class RoomBase : MonoBehaviour {
     public virtual string roomName { get; }
     public virtual void OnRoomEntered() {
         // Display message of which room the player is in
-        Debug.Log($"You entered in the {roomName}");
+        Debug.Log($"You entered in the {roomName}"); // DEBUG
     }
     public virtual void OnRoomSearched() { }
     public virtual void OnRoomExit() {
-        Debug.Log($"You left the {roomName}");
+        Debug.Log($"You left the {roomName}"); // DEBUG
     }
 
 
