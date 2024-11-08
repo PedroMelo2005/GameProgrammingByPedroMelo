@@ -32,51 +32,53 @@ public class PuzzleRoom : RoomBase {
 
     public override string roomName { get; } = "Puzzle Room";
 
-    public override void OnRoomEntered() {
-        int index = RandomPuzzles(); // Assign the variable RandomPuzzles() to the variable index
+    public override void OnTriggerEnter(Collider other) {
+        if (other.CompareTag("Player")) {
+            int index = RandomPuzzles(); // Assign the variable RandomPuzzles() to the variable index
 
-        // Call the base function OnRoomEntered
-        base.OnRoomEntered();
+            // Display message of which room the player enter
+            Debug.Log($"You entered in the {roomName}"); // DEBUG
 
-        // If loop that if player has solved or tried to solve the puzzle more than 3 times the player will can't solve more puzzles
-        if (puzzlesTimes < 3) {
-            Debug.Log("Answer the correct answer to the riddle");
-            Debug.Log("RIDDLE:");
-            Debug.Log(puzzleList[index]);
-            /*
-            puzzleAnswer = (Console.ReadLine() ?? "").ToLower();
-            */
-
-            // If loop that check if the answer is correct
-            if (puzzleAnswer == puzzlesAnswerList[index]) {
-                Debug.Log($"Good job {Player.Instance.PlayerName} your answer is correct!");
-                Debug.Log("Try to search for an item");
-                puzzleIsCorrect = true;
-                puzzlesTimes++;
-            }
-            else if (puzzlesTimes < 3) {
-                puzzlesTimes++;
-                Debug.Log("Your answer is wrong!");
-                Debug.Log("Do you want to try again ?");
+            // If loop that if player has solved or tried to solve the puzzle more than 3 times the player will can't solve more puzzles
+            if (puzzlesTimes < 3) {
+                Debug.Log("Answer the correct answer to the riddle");
                 Debug.Log("RIDDLE:");
                 Debug.Log(puzzleList[index]);
                 /*
-                puzzleAnswer = (Console.ReadLine() ?? "");
+                puzzleAnswer = (Console.ReadLine() ?? "").ToLower();
                 */
+
+                // If loop that check if the answer is correct
                 if (puzzleAnswer == puzzlesAnswerList[index]) {
                     Debug.Log($"Good job {Player.Instance.PlayerName} your answer is correct!");
                     Debug.Log("Try to search for an item");
                     puzzleIsCorrect = true;
                     puzzlesTimes++;
                 }
-                else {
-                    Debug.Log($"Hahaha. {Player.Instance.PlayerName} your answer is wrong again!");
+                else if (puzzlesTimes < 3) {
                     puzzlesTimes++;
+                    Debug.Log("Your answer is wrong!");
+                    Debug.Log("Do you want to try again ?");
+                    Debug.Log("RIDDLE:");
+                    Debug.Log(puzzleList[index]);
+                    /*
+                    puzzleAnswer = (Console.ReadLine() ?? "");
+                    */
+                    if (puzzleAnswer == puzzlesAnswerList[index]) {
+                        Debug.Log($"Good job {Player.Instance.PlayerName} your answer is correct!");
+                        Debug.Log("Try to search for an item");
+                        puzzleIsCorrect = true;
+                        puzzlesTimes++;
+                    }
+                    else {
+                        Debug.Log($"Hahaha. {Player.Instance.PlayerName} your answer is wrong again!");
+                        puzzlesTimes++;
+                    }
                 }
             }
-        }
-        else {
-            Debug.Log($"{Player.Instance.PlayerName} you can't try to solve puzzles more than 3 times");
+            else {
+                Debug.Log($"{Player.Instance.PlayerName} you can't try to solve puzzles more than 3 times");
+            }
         }
     }
 

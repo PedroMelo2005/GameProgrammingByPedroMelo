@@ -46,14 +46,21 @@ public class RoomBase : MonoBehaviour {
 
     public static string itemFound = "";
     public virtual string roomName { get; }
-    public virtual void OnRoomEntered() {
-        // Display message of which room the player is in
-        Debug.Log($"You entered in the {roomName}"); // DEBUG
-    }
     public virtual void OnRoomSearched() { }
-    public virtual void OnRoomExit() {
-        Debug.Log($"You left the {roomName}"); // DEBUG
+
+    public virtual void OnTriggerEnter(Collider other) {
+
+        if (other.CompareTag("Player")) {
+            // Display message of which room the player enter
+            Debug.Log($"You entered in the {roomName}"); // DEBUG
+        }
     }
 
+    public virtual void OnTriggerExit(Collider other) {
+        if (other.CompareTag("Player")) {
+            // Display message of which room the player left
+            Debug.Log($"You left the {roomName}"); // DEBUG
+        }
+    }
 
 }

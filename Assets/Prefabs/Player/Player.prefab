@@ -103,8 +103,8 @@ SphereCollider:
     m_Bits: 0
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
-  m_ProvidesContacts: 1
-  m_Enabled: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
   serializedVersion: 3
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
@@ -210,7 +210,7 @@ CapsuleCollider:
     m_Bits: 0
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
-  m_ProvidesContacts: 1
+  m_ProvidesContacts: 0
   m_Enabled: 0
   serializedVersion: 2
   m_Radius: 0.5
@@ -283,10 +283,10 @@ Camera:
     height: 1
   near clip plane: 0.32
   far clip plane: 1000
-  field of view: 65
+  field of view: 60
   orthographic: 0
   orthographic size: 5
-  m_Depth: 0
+  m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
     m_Bits: 4294967295
@@ -321,7 +321,6 @@ GameObject:
   - component: {fileID: 3375663572300106800}
   - component: {fileID: 2063440617153998799}
   - component: {fileID: -7343000375826102715}
-  - component: {fileID: 8507177017761497507}
   - component: {fileID: -915324786735072532}
   - component: {fileID: 5862743254193957874}
   m_Layer: 0
@@ -361,7 +360,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _playerMovementScript: {fileID: 2063440617153998799}
   _playerCameraScript: {fileID: -7343000375826102715}
-  _playerCollisionScript: {fileID: 8507177017761497507}
   PhysicsBody: {fileID: 0}
   PlayerName: 
   PlayerLife: 50
@@ -394,19 +392,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _playerScript: {fileID: 3375663572300106800}
   playerHead: {fileID: 5122758945239510413}
---- !u!114 &8507177017761497507
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3016109537065809452}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9ecbd51870065ca45882d94899d70f3b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _playerScript: {fileID: 3375663572300106800}
 --- !u!136 &-915324786735072532
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -422,7 +407,7 @@ CapsuleCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
@@ -559,7 +544,7 @@ CapsuleCollider:
     m_Bits: 0
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
-  m_ProvidesContacts: 1
+  m_ProvidesContacts: 0
   m_Enabled: 0
   serializedVersion: 2
   m_Radius: 0.5
@@ -672,7 +657,7 @@ CapsuleCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 2
   m_Radius: 0.5
   m_Height: 2

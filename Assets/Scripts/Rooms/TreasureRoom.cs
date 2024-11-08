@@ -6,9 +6,11 @@ public class TreasureRoom : RoomBase {
     int timesSearched = 0;
     public override string roomName { get; } = "Treasure Room";
 
-    public override void OnRoomEntered() {
-        // Call the base function OnRoomEntered
-        base.OnRoomEntered();
+    public override void OnTriggerEnter(Collider other) {
+        if (other.CompareTag("Player")) {
+            // Display message of which room the player enter
+            Debug.Log($"You entered in the {roomName}"); // DEBUG
+        }
     }
 
     public override void OnRoomSearched() {

@@ -6,7 +6,6 @@ using UnityEngine;
 public class Player : MonoBehaviour {
     [SerializeField] private PlayerMovement _playerMovementScript;
     [SerializeField] private PlayerCamera _playerCameraScript;
-    [SerializeField] private PlayerCollision _playerCollisionScript;
     public Rigidbody PhysicsBody;
 
     // Create Instances

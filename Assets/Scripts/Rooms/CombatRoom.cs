@@ -15,6 +15,70 @@ public class CombatRoom : RoomBase {
 
     public override string roomName { get; } = "Combat Room";
 
+    public override void OnTriggerEnter(Collider other) {
+        if (other.CompareTag("Player")) {
+            userWantsToFight = false;
+
+            // Display message of which room the player enter
+            Debug.Log($"You entered in the {roomName}"); // DEBUG
+
+            // Call function that display player's life
+            playerManager.player.GetPlayerLife();
+
+            // While loop that Start the Combat
+            while (userWantsToFight != true) {
+                Debug.Log("Do you want to fight? WRITE: YES | NO");
+                /*
+                userAnswer = (Console.ReadLine() ?? "").ToLower();
+                */
+
+                switch (userAnswer) {
+                    case "y":
+                    case "yes":
+                        userWantsToFight = true;
+                        // Create a variable enemy that is assign to the RandomEnemy() function
+                        enemyManager.CreateEnemy(enemy); // get a random enemy class
+
+                        // Display message of which enemy the player is fighting against
+                        Debug.Log($"You are fighting against the {enemy.EnemyName}");
+                        Debug.Log($"{enemy.EnemyName} has {enemy.EnemyLife} life points!");
+
+                        // Combat Loop that runs while player and enemy are alive
+                        while (playerManager.player.IsPlayerAlive && enemy.IsAlive()) {
+                            /*
+                            // Call function PlayerTurn
+                            combat.PlayerTurn(enemy);
+                            */
+                            // If enemy is not alive the loop stop
+                            if (enemy.IsAlive() != true)
+                                break;
+                            /*
+                            // Call function EnemyTurn
+                            combat.EnemyTurn(enemy);
+                            */
+                        }
+                        /*
+                        // Call function WinLose that check if player won or lost
+                        combat.CombatWinLose(enemy);
+                        */
+                        break;
+
+                    case "n":
+                    case "no":
+                        Debug.Log("Okay, you don't want to fight");
+                        userWantsToFight = true;
+                        doesPlayerWon = false;
+                        break;
+
+                    default:
+                        Debug.Log("Wrong input. Write: YES | NO");
+                        break;
+                }
+            }
+        }
+    }
+
+    /*
     public override void OnRoomEntered() {
         userWantsToFight = false;
 
@@ -31,6 +95,7 @@ public class CombatRoom : RoomBase {
             userAnswer = (Console.ReadLine() ?? "").ToLower();
             */
 
+            /*
             switch (userAnswer) {
                 case "y":
                 case "yes":
@@ -48,6 +113,7 @@ public class CombatRoom : RoomBase {
                         // Call function PlayerTurn
                         combat.PlayerTurn(enemy);
                         */
+                        /*
                         // If enemy is not alive the loop stop
                         if (enemy.IsAlive() != true)
                             break;
@@ -55,11 +121,13 @@ public class CombatRoom : RoomBase {
                         // Call function EnemyTurn
                         combat.EnemyTurn(enemy);
                         */
+                        /*
                     }
                     /*
                     // Call function WinLose that check if player won or lost
                     combat.CombatWinLose(enemy);
                     */
+                    /*
                     break;
 
                 case "n":
@@ -75,6 +143,7 @@ public class CombatRoom : RoomBase {
             }
         }
     }
+*/
 
     public override void OnRoomSearched() {
         if (doesPlayerWon && timesSearched < 3) {
