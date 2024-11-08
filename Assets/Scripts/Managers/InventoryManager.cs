@@ -5,6 +5,7 @@ using static UnityEditor.Experimental.GraphView.GraphView;
 
 public class InventoryManager : MonoBehaviour {
     [SerializeField] Inventory inventoryPrefab;
+    [SerializeField] Sprite[] spritesItem;
 
     // Create Instances
     private Inventory _inventory;

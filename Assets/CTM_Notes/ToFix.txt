@@ -2,6 +2,8 @@
 | CTM Notes is a checklist note of (Corrections To Make) --> Coded by Pedro Melo <-- |
 |------------------------------------------------------------------------------------|
 
+0- Change the Item script (should not be an Monobehavior and should contain information of damage, icon, name, everything)
+
 1- Change the size of the prefabs and in the scripts to "sizeRoom = 10" --> OK
 
 2- Add a roof to the Rooms prefabs --> OK

@@ -18,7 +18,7 @@ public class InGameHud : MonoBehaviour {
 
     // Update is called once per frame
     void Update() {
-        if(_gamePaused) return;
+        if (_gamePaused) return;
         _timer += Time.deltaTime;
         Timer.text = $"{_timer,0:0.000}";
     }
