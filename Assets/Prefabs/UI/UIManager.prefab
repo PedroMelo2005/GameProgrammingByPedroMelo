@@ -340,7 +340,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a8f5067628944f841a270cb91b606ce4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameManagerPrefab: {fileID: -1245917169786692289, guid: 39510d638445b3a4e8043872a85a571e, type: 3}
+  gameManagerPrefab: {fileID: 6298906126546345028, guid: 39510d638445b3a4e8043872a85a571e, type: 3}
   UiSystem: {fileID: 3619976645583491346}
   GameHud: {fileID: 638898605667997522}
 --- !u!1 &5551191205716238527
