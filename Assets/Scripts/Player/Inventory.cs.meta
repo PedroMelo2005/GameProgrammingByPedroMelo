@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: 9ff50ebdf1ec6c845afd64c16a1bbc57
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - daggerPrefab: {fileID: -2916733342129515047, guid: 645aa8cab936f954a9daf89f84c06977, type: 3}
+  - longSwordPrefab: {fileID: -6810106400785607495, guid: 7e81c68509fdeab4793c258472f90c89, type: 3}
+  - spearPrefab: {fileID: 7702102240790641184, guid: 5bffa2f0ecfb34d4b9cb4bc2b19bfa58, type: 3}
+  - axePrefab: {fileID: -7377534215578829604, guid: 4250efa7b817c1544b64791f225801b5, type: 3}
+  - healPotionPrefab: {fileID: -2583404767578656593, guid: c41343f567e102346849ba64b6b6a6ca, type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

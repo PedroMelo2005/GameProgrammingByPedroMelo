@@ -12,7 +12,11 @@ GameObject:
   - component: {fileID: -1245917169786692289}
   m_Layer: 0
   m_Name: GameManager
+<<<<<<< Updated upstream
   m_TagString: GameManager
+=======
+  m_TagString: Untagged
+>>>>>>> Stashed changes
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -44,8 +48,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f7fcee6efc6567245932f1fa7b4c08a0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+<<<<<<< Updated upstream
   MapManagerPrefab: {fileID: -2669769873952706728, guid: 6b74985e155eaa245aba62ac6f0120cb, type: 3}
   PlayerManagerPrefab: {fileID: 14445286747359509, guid: b73f70425d6302447b3c61e457372572, type: 3}
   InventoryManagerPrefab: {fileID: -1231323273277418428, guid: 9e0092836842b674584d7acd9e465cd2, type: 3}
   ItemManagerPrefab: {fileID: -8474020454193585116, guid: 876c40680b725144d85ab71a1176a070, type: 3}
   EnemyManagerPrefab: {fileID: 6190444301668518998, guid: afc1189f49dbfce419422d51f6d3973a, type: 3}
+=======
+  PlayerManagerPrefab: {fileID: 14445286747359509, guid: b73f70425d6302447b3c61e457372572, type: 3}
+  EnemyManagerPrefab: {fileID: 6190444301668518998, guid: afc1189f49dbfce419422d51f6d3973a, type: 3}
+  ItemManagerPrefab: {fileID: -8474020454193585116, guid: 876c40680b725144d85ab71a1176a070, type: 3}
+  InventoryManagerPrefab: {fileID: -1231323273277418428, guid: 9e0092836842b674584d7acd9e465cd2, type: 3}
+  MapManagerPrefab: {fileID: -2669769873952706728, guid: 6b74985e155eaa245aba62ac6f0120cb, type: 3}
+>>>>>>> Stashed changes

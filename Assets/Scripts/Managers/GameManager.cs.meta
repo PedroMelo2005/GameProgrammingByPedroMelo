@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: f7fcee6efc6567245932f1fa7b4c08a0
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - PlayerPreFab: {fileID: 3375663572300106800, guid: 743d7fb391a1f3a4d92078f3b2324366, type: 3}
+  - EnemyManagerPreFab: {fileID: 6190444301668518998, guid: afc1189f49dbfce419422d51f6d3973a, type: 3}
+  - ItemManagerPreFab: {fileID: -8474020454193585116, guid: 876c40680b725144d85ab71a1176a070, type: 3}
+  - InventoryManagerPrefab: {fileID: -7437302563052941846, guid: 9e0092836842b674584d7acd9e465cd2, type: 3}
+  - MapManagerPreFab: {fileID: -2669769873952706728, guid: 6b74985e155eaa245aba62ac6f0120cb, type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
