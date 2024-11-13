@@ -5,6 +5,7 @@ using UnityEngine;
 public class PauseMenu : MonoBehaviour {
     [SerializeField] private Transform InventoryContentParent;
     [SerializeField] private InventoryItem InventoryItemPrefab;
+    [SerializeField] private UIManager UiSystem;
 
     List<ItemData> _fakeInventoryForTesting = new();
     List<InventoryItem> _inventoryItemInstances = new();
@@ -18,13 +19,15 @@ public class PauseMenu : MonoBehaviour {
     // Start is called before the first frame update
     void Start()
     {
-        
+        gameObject.SetActive(false);
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        if(Input.GetKeyDown(KeyCode.Escape)) {
+            ContinueGame();
+        }
     }
 
     private void OnEnable() {
@@ -42,11 +45,23 @@ public class PauseMenu : MonoBehaviour {
         _inventoryItemInstances.Clear();
     }
 
-    public void ButtonContinue() {
-
+    public void PauseGame() {
+        gameObject.SetActive(true);
+        Time.timeScale = 0f;
+        UiSystem.IsPaused = true;
+        Cursor.lockState = CursorLockMode.Confined;
+        Cursor.visible = true;
     }
 
-    public void ButtonQuit() {
+    public void ContinueGame() {
+        gameObject.SetActive(false);
+        Time.timeScale = 1f;
+        UiSystem.IsPaused = false;
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
+    }
+
+    public void QuitGame() {
 
     }
 

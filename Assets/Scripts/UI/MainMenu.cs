@@ -4,15 +4,15 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class MainMenu : MonoBehaviour {
-    [SerializeField] GameManager gameManagerPrefab;
+    [SerializeField] private GameManager GameManagerPrefab;
     [SerializeField] private UIManager UiSystem;
     [SerializeField] private InGameHud GameHud;
 
-    private GameManager gameManager;
+    private GameManager _gameManager;
 
     public void ButtonStartGame() {
         // Instantiate the gameManagerPrefab
-        gameManager = Instantiate(gameManagerPrefab);
+        _gameManager = Instantiate(GameManagerPrefab);
         // Set the SetActive of the gameObject to false
         gameObject.SetActive(false);
         // Call function "ActivateInGameHud()"
