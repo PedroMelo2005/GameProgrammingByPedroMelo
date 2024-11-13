@@ -11,16 +11,16 @@ public class ItemManager : MonoBehaviour {
 
     // Create the Instances
     public static ItemManager Instance; // Global Static "Instance" instance of type "ItemManager"
-    private Item _item; // Private "_item" instance of type "Item"
+    private ItemScript _itemScript; // Private "_item" instance of type "Item"
 
     public void SetUpItemManager() {
         Debug.Log("SetUp the \"ItemManager\""); // DEBUG
     }
 
     // Method that return a random item of "itemList"
-    public Item RandomItem() {
+    public ItemScript RandomItem() {
         // Create a List that has probability of drop items
-        List<Item> itemList = new List<Item>();
+        List<ItemScript> itemList = new List<ItemScript>();
 
         // For loop that add 20 times "healPotionPrefab" 20% of chance to be dropped
         for (int i = 0; i < 20; i++) {

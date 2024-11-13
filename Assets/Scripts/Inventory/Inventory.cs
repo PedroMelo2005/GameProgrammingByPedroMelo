@@ -7,7 +7,7 @@ public class Inventory : MonoBehaviour {
     public static Inventory Instance; // Global Static "Instance" instance of type "Inventory"
 
     // Create Lists
-    public List<Item> InventoryList = new List<Item>(); // Public List "InventoryList" of type "Item"
+    public List<ItemScript> InventoryList = new(); // Public List "InventoryList" of type "Item"
 
     /*
     [SerializeField] Dagger daggerPrefab;
@@ -52,13 +52,13 @@ public class Inventory : MonoBehaviour {
 
     // Function AddItemToInventory that add item to the inventory
     public void AddItemToInventory(ref string itemFound) {
-        Item item = ItemManager.Instance.RandomItem(); // Assign the "RandomItem()" to local variable "item"
+        ItemScript item = ItemManager.Instance.RandomItem(); // Assign the "RandomItem()" to local variable "item"
         InventoryList.Add(item); // Add RandomItem() to InventoryList
         itemFound = item.ItemName; // Assign RandomItem().ItemName to itemFound
     }
 
     // Function RemoveItemOfInventory that remove item from the inventory
-    public void RemoveItemOfInventory(Item item) {
+    public void RemoveItemOfInventory(ItemScript item) {
         InventoryList.Remove(item);
     }
 
@@ -68,7 +68,7 @@ public class Inventory : MonoBehaviour {
         if (InventoryList.Count > 0) {
             Debug.Log("Your inventory has:");
             // For loop that is execute for each item in InventoryList
-            foreach (Item item in InventoryList) {
+            foreach (ItemScript item in InventoryList) {
                 Debug.Log(item.ItemName);
             }
         }
@@ -81,7 +81,7 @@ public class Inventory : MonoBehaviour {
     public List<Weapon> GetWeapons() {
         List<Weapon> weaponsList = new List<Weapon>(); // Create List of weaponsList
                                                        // For each item in the InventoryList will run the code
-        foreach (Item item in InventoryList) {
+        foreach (ItemScript item in InventoryList) {
             // If the item is from Weapon class will be added to the weaponList
             if (item is Weapon weapon) {
                 weaponsList.Add(weapon);
@@ -94,7 +94,7 @@ public class Inventory : MonoBehaviour {
     public List<Consumable> GetConsumables() {
         List<Consumable> consumablesList = new List<Consumable>(); // Create List of consumablesList
                                                                    // For each item in the InventoryList will run the code
-        foreach (Item item in InventoryList) {
+        foreach (ItemScript item in InventoryList) {
             // If the item is from Consumable class will be added to the consumablesList
             if (item is Consumable consumable) {
                 consumablesList.Add(consumable);

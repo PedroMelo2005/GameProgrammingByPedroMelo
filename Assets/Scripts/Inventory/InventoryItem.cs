@@ -20,25 +20,25 @@ public class InventoryItem : MonoBehaviour {
         
     }
 
-    public void Setup(ItemData itemData) {
-        switch (itemData.ItemRarity) {
-            case Rarity.Common:
+    public void Setup(Item item) {
+        switch (item.rarity) {
+            case Item.Rarity.Common:
                 ItemIcon.color = Color.white;
                 break;
 
-            case Rarity.Rare:
+            case Item.Rarity.Rare:
                 ItemIcon.color = Color.blue;
                 break;
 
-            case Rarity.Epic:
+            case Item.Rarity.Epic:
                 ItemIcon.color = Color.magenta;
                 break;
 
-            case Rarity.Legendary:
+            case Item.Rarity.Legendary:
                 ItemIcon.color = Color.yellow;
                 break;
         }
-        ItemName.text = itemData.ItemName;
+        ItemName.text = item.ItemName;
     }
 
 }
