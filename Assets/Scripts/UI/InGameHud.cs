@@ -23,16 +23,16 @@ public class InGameHud : MonoBehaviour {
         Timer.text = $"{_timer,0:0.000}";
     }
 
+    // Set some things when this function is called
     public void OnStartGame() {
         UiSystem.IsPaused = false;
         HealthBar.fillAmount = 1;
     }
 
-    /*
-    public void OnPauseGame() {
-        UiSystem.IsPaused = true;
+    // Make this gameObject be active in the scene
+    public void SetInGameHud() {
+        gameObject.SetActive(true);
     }
-    */
 
     public void OnHealthChange(float currentHealth, float maxHealth) {
         HealthBar.fillAmount = currentHealth / maxHealth;

@@ -6,56 +6,44 @@ using UnityEngine;
 public class UIManager : MonoBehaviour {
     [SerializeField] private GameObject[] Layouts;
 
-    [SerializeField] private GameObject mainMenuObject;
-    [SerializeField] private GameObject inGameHudObject;
-    [SerializeField] private GameObject pauseMenuObject;
-
+    [SerializeField] private MainMenu _mainMenu;
+    [SerializeField] private InGameHud _inGameHud;
     [SerializeField] private PauseMenu _pauseMenu;
 
     public bool IsPaused;
 
     // Start is called before the first frame update
     void Start() {
-        OpenMainMenu();
+        // Call the function "ActivateMainMenu()"
+        ActivateMainMenu();
     }
 
     // Update is called once per frame
     void Update() {
-        if (Input.GetKeyDown(KeyCode.Escape)) {
-            _pauseMenu.PauseGame();
-        }
+        // Call the function "SetPauseGameMenu()"
+        SetPauseGameMenu();
     }
 
-    private void SetLayout(MenuLayout layout) {
-        for (int i = 0; i < Layouts.Length; i++) {
-            Layouts[i].SetActive((int) layout == i);
-        }
+    // Function that call the function "SetMainMenu()"
+    public void ActivateMainMenu() {
+        _mainMenu.SetMainMenu();
     }
 
-    public void OpenMainMenu() {
-        mainMenuObject.SetActive(true);
-        /*
-        SetLayout(MenuLayout.Main);
-        */
-    }
-
+    // Function that call the function "SetInGameHud()"
     public void ActivateInGameHud() {
-        inGameHudObject.SetActive(true);
-        /*
-        SetLayout(MenuLayout.InGame);
-        */
+        _inGameHud.SetInGameHud();
     }
 
-    public void ShowPauseGameMenu() {
-        if (IsPaused == true) {
-            pauseMenuObject.SetActive(false);
+    // Call the functions "ContinueGame()" or "PauseGame()"
+    public void SetPauseGameMenu() {
+        if (Input.GetKeyDown(KeyCode.Escape)) {
+            if (IsPaused == true) {
+                _pauseMenu.ContinueGame();
+            }
+            else if (IsPaused == false) {
+                _pauseMenu.PauseGame();
+            }
         }
-        else if (IsPaused == false) {
-            pauseMenuObject.SetActive(true);
-        }
-        /*
-        SetLayout(MenuLayout.Pause);
-        */
     }
 
 }

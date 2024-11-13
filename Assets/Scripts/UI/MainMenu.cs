@@ -10,6 +10,11 @@ public class MainMenu : MonoBehaviour {
 
     private GameManager _gameManager;
 
+    // Make this gameObject be active in the scene
+    public void SetMainMenu() {
+        gameObject.SetActive(true);
+    }
+
     public void ButtonStartGame() {
         // Instantiate the gameManagerPrefab
         _gameManager = Instantiate(GameManagerPrefab);
