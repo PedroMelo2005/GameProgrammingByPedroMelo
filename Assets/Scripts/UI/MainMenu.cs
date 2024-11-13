@@ -5,36 +5,21 @@ using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class MainMenu : MonoBehaviour {
-    /*
-    [SerializeField] private GameManager GameManagerPrefab;
-    */
-    [SerializeField] private UIManager UiSystem;
-    [SerializeField] private InGameHud GameHud;
-
-    /*
-    private GameManager _gameManager;
-    */
-
     // Make this gameObject be active in the scene
     public void SetMainMenu() {
         gameObject.SetActive(true);
+        // Lock the Cursor to the game window and set "Cursor.visible" to true
+        Cursor.lockState = CursorLockMode.Confined;
+        Cursor.visible = true;
     }
 
     public void ButtonStartGame() {
+        // Assign the variable "IsMainMenuActive" to false
         UIManager.IsMainMenuActive = false;
         // Set the SetActive of the gameObject to false
         gameObject.SetActive(false);
+        // Change the Scene of the game
         SceneManager.LoadScene("SampleScene");
-        /*
-        // Instantiate the gameManagerPrefab
-        _gameManager = Instantiate(GameManagerPrefab);
-        // Set the SetActive of the gameObject to false
-        gameObject.SetActive(false);
-        // Call function "ActivateInGameHud()"
-        UiSystem.ActivateInGameHud();
-        // Call function "OnStartGame()"
-        GameHud.OnStartGame();
-        */
     }
 
     public void QuitGame() {

@@ -93,6 +93,7 @@ MonoBehaviour:
   InventoryContentParent: {fileID: 0}
   InventoryItemPrefab: {fileID: 0}
   UiSystem: {fileID: 7487451114914673348}
+  _inGameHud: {fileID: 9082350511341940166}
 --- !u!1 &652054036642372155
 GameObject:
   m_ObjectHideFlags: 0
@@ -143,7 +144,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e85200a84a4e70d49b5f461b1dab1336, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  UiSystem: {fileID: 7487451114914673348}
   HealthBar: {fileID: 6569406367114539888}
   Timer: {fileID: 8885937100640447116}
 --- !u!1 &723252930849559236
@@ -928,10 +928,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a21b9d259f18154488d896c8eb82ab3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Layouts:
-  - {fileID: 0}
-  - {fileID: 652054036642372155}
-  - {fileID: 480607730550356703}
   GameManagerPrefab: {fileID: 6298906126546345028, guid: 39510d638445b3a4e8043872a85a571e, type: 3}
   _mainMenu: {fileID: 0}
   _inGameHud: {fileID: 9082350511341940166}

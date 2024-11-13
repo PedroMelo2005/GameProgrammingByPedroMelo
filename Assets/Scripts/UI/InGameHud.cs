@@ -5,7 +5,6 @@ using UnityEngine.Rendering.VirtualTexturing;
 using UnityEngine.UI;
 
 public class InGameHud : MonoBehaviour {
-    [SerializeField] private UIManager UiSystem;
     [SerializeField] private Image HealthBar;
     [SerializeField] private Text Timer;
 
@@ -27,11 +26,16 @@ public class InGameHud : MonoBehaviour {
     public void OnStartGame() {
         UIManager.IsPaused = false;
         HealthBar.fillAmount = 1;
+        ActivateInGameHud();
     }
 
     // Make this gameObject be active in the scene
-    public void SetInGameHud() {
+    public void ActivateInGameHud() {
         gameObject.SetActive(true);
+    }
+
+    public void DeactivateInGameHud() {
+        gameObject.SetActive(false);
     }
 
     public void OnHealthChange(float currentHealth, float maxHealth) {

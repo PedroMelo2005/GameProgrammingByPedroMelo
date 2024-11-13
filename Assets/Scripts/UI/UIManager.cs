@@ -6,56 +6,53 @@ using UnityEngine.Rendering.VirtualTexturing;
 using UnityEngine.SceneManagement;
 
 public class UIManager : MonoBehaviour {
-    [SerializeField] private GameObject[] Layouts;
     [SerializeField] private GameManager GameManagerPrefab;
-
     [SerializeField] private MainMenu _mainMenu;
     [SerializeField] private InGameHud _inGameHud;
     [SerializeField] private PauseMenu _pauseMenu;
 
     private GameManager _gameManager;
 
-    public static bool IsMainMenuActive = true;
-    public static bool IsPaused;
+    public static bool IsMainMenuActive = false;
+    public static bool IsPaused = false;
 
     // Start is called before the first frame update
     void Start() {
-        /*
-        // Call the function "ActivateMainMenu()"
-        ActivateMainMenu();
-        */
+        // Lock the Cursor to the game window and set "Cursor.visible" to true
+        Cursor.lockState = CursorLockMode.Confined;
+        Cursor.visible = true;
+
         if (IsMainMenuActive == true) {
             // Call the function "ActivateMainMenu()"
             ActivateMainMenu();
         }
         else if (IsMainMenuActive == false) {
+            // Call the function "SetStartGame()"
             SetStartGame();
         }
     }
 
     // Update is called once per frame
     void Update() {
-        // Call the function "SetPauseGameMenu()"
-        SetPauseGameMenu();
+        if (IsMainMenuActive == false) {
+            // Call the function "SetPauseGameMenu()"
+            SetPauseGameMenu();
+        }
     }
 
     public void SetStartGame() {
         // Instantiate the gameManagerPrefab
         _gameManager = Instantiate(GameManagerPrefab);
-        // Call function "ActivateInGameHud()"
-        ActivateInGameHud();
         // Call function "OnStartGame()"
         _inGameHud.OnStartGame();
+        // Lock the Cursor to the center of the game window and set "Cursor.visible" to false
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
     }
 
     // Function that call the function "SetMainMenu()"
     public void ActivateMainMenu() {
         _mainMenu.SetMainMenu();
-    }
-
-    // Function that call the function "SetInGameHud()"
-    public void ActivateInGameHud() {
-        _inGameHud.SetInGameHud();
     }
 
     // Call the functions "ContinueGame()" or "PauseGame()"
