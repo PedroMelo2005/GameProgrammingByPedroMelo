@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PauseMenu : MonoBehaviour {
     [SerializeField] private Transform InventoryContentParent;
@@ -50,7 +51,7 @@ public class PauseMenu : MonoBehaviour {
         // Freeze the time of the game
         Time.timeScale = 0f;
         // Assign the variable "IsPaused" to true
-        UiSystem.IsPaused = true;
+        UIManager.IsPaused = true;
         // Lock the Cursor to the game window and set "Cursor.visible" to true
         Cursor.lockState = CursorLockMode.Confined;
         Cursor.visible = true;
@@ -63,14 +64,25 @@ public class PauseMenu : MonoBehaviour {
         // Unfreeze the time of the game
         Time.timeScale = 1f;
         // Assign the variable "IsPaused" to false
-        UiSystem.IsPaused = false;
+        UIManager.IsPaused = false;
         // Lock the Cursor to the center of the game window and set "Cursor.visible" to false
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
     }
 
-    public void QuitGame() {
-
+    public void BackToMainMenu() {
+        UIManager.IsMainMenuActive = true;
+        SceneManager.LoadScene("MainMenu");
+        // Unfreeze the time of the game
+        Time.timeScale = 1f;
+        // Assign the variable "IsPaused" to false
+        UIManager.IsPaused = false;
     }
+
+    /*
+    public void QuitGame() {
+        Application.Quit();
+    }
+    */
 
 }

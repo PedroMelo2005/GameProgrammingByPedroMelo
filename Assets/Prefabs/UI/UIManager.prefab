@@ -527,11 +527,9 @@ MonoBehaviour:
   - {fileID: 2114545731958332332}
   - {fileID: 6763633225013823828}
   - {fileID: 5943266115237292464}
-  mainMenuObject: {fileID: 2114545731958332332}
-  inGameHudObject: {fileID: 6763633225013823828}
-  pauseMenuObject: {fileID: 5943266115237292464}
+  _mainMenu: {fileID: 7657628183880833042}
+  _inGameHud: {fileID: 3088117560488017577}
   _pauseMenu: {fileID: 5794003649199428618}
-  IsPaused: 0
 --- !u!1 &2861199707463608948
 GameObject:
   m_ObjectHideFlags: 0
@@ -1126,10 +1124,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 8616653941379588071}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchorMin: {x: 0, y: 0.5}
+  m_AnchorMax: {x: 1, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 200, y: 100}
+  m_SizeDelta: {x: 0, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &3230762862517190319
 CanvasRenderer:

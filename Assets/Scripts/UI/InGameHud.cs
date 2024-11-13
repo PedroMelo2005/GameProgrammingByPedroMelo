@@ -25,7 +25,7 @@ public class InGameHud : MonoBehaviour {
 
     // Set some things when this function is called
     public void OnStartGame() {
-        UiSystem.IsPaused = false;
+        UIManager.IsPaused = false;
         HealthBar.fillAmount = 1;
     }
 
