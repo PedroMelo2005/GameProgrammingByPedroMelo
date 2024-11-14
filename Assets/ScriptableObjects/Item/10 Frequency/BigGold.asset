@@ -15,12 +15,12 @@ MonoBehaviour:
   ItemName: BigGold
   description: Big Gold Bag
   price: 800
-  id: 6
+  id: 23
   rarity: 2
   itemType: 2
   slotType: 2
   frequency: 10
   image: {fileID: 0}
-  backgroundColor: {r: 0, g: 0, b: 0, a: 0}
+  backgroundColor: {r: 0.99215686, g: 0, b: 1, a: 0}
   prefab: {fileID: 0}
   generalType: 2

@@ -15,12 +15,12 @@ MonoBehaviour:
   ItemName: Small Gold
   description: Small Gold Bag
   price: 200
-  id: 4
+  id: 21
   rarity: 0
   itemType: 2
   slotType: 2
   frequency: 50
   image: {fileID: 0}
-  backgroundColor: {r: 0, g: 0, b: 0, a: 0}
+  backgroundColor: {r: 0, g: 0.6509804, b: 1, a: 0}
   prefab: {fileID: 0}
   generalType: 2

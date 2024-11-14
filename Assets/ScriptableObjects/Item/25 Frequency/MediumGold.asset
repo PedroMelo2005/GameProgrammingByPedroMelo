@@ -15,12 +15,12 @@ MonoBehaviour:
   ItemName: MediumGold
   description: Medium Gold Bag
   price: 500
-  id: 5
+  id: 22
   rarity: 1
   itemType: 2
   slotType: 2
   frequency: 25
   image: {fileID: 0}
-  backgroundColor: {r: 0, g: 0, b: 0, a: 0}
+  backgroundColor: {r: 1, g: 0.39607844, b: 0, a: 0}
   prefab: {fileID: 0}
   generalType: 2

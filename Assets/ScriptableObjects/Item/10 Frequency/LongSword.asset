@@ -10,17 +10,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a3a3a22a6a7e69243b0a949fd2016600, type: 3}
-  m_Name: Spear
+  m_Name: LongSword
   m_EditorClassIdentifier: 
-  ItemName: Spear
-  description: Spear Weapon
-  price: 1200
-  id: 4
-  rarity: 3
+  ItemName: LongSword
+  description: Long Sword Weapon
+  price: 600
+  id: 2
+  rarity: 1
   itemType: 0
   slotType: 0
-  frequency: 1
+  frequency: 10
   image: {fileID: 0}
-  backgroundColor: {r: 1, g: 0.97662324, b: 0, a: 0}
-  prefab: {fileID: 1885606087641399498, guid: 5bffa2f0ecfb34d4b9cb4bc2b19bfa58, type: 3}
-  damage: 30
+  backgroundColor: {r: 1, g: 0.39741516, b: 0, a: 0}
+  prefab: {fileID: 7671260012147370973, guid: 7e81c68509fdeab4793c258472f90c89, type: 3}
+  damage: 12

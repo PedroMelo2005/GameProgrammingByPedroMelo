@@ -126,8 +126,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 94be0cce6d16e1342a0684fdc01c7f09, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  InventoryContentParent: {fileID: 0}
-  InventoryItemPrefab: {fileID: 0}
   UiSystem: {fileID: 7487451114914673348}
   _inGameHud: {fileID: 9082350511341940166}
 --- !u!1 &589799042471421423
@@ -897,7 +895,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0.0000076293945}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0.000015258789}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1576109480897065952

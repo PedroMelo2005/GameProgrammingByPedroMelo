@@ -15,12 +15,12 @@ MonoBehaviour:
   ItemName: MediumHealPotion
   description: Medium Heal Potion
   price: 500
-  id: 2
+  id: 12
   rarity: 1
   itemType: 1
   slotType: 1
   frequency: 10
   image: {fileID: 0}
-  backgroundColor: {r: 0, g: 0, b: 0, a: 0}
+  backgroundColor: {r: 1, g: 0.39607844, b: 0, a: 0}
   prefab: {fileID: 8539697262634021533, guid: c41343f567e102346849ba64b6b6a6ca, type: 3}
   heal: 50
