@@ -16,6 +16,8 @@ public class GameManager : MonoBehaviour {
     private ItemManager _itemManager; // Private "_itemManager" instance
     private EnemyManager _enemyManager; // Private "_enemyManager" instance
 
+    public static bool IsGamePaused;
+
     // Start is called before the first frame update
     public void Start() {
         Debug.Log("Starting Game"); // DEBUG
@@ -48,6 +50,8 @@ public class GameManager : MonoBehaviour {
     }
 
     void OnGameStart() {
+        Debug.Log("Assign the variable \'IsGamePaused\' to false");
+        IsGamePaused = false;
         // Call function CreateMap
         _mapManager.CreateMap();
         //Call function SpawnPlayer

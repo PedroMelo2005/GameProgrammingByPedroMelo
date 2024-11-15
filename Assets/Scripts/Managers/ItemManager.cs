@@ -49,4 +49,5 @@ public class ItemManager : MonoBehaviour {
 
         return itemList[Random.Range(0, itemList.Count)]; // return a random item of "itemList"
     }
+
 }
