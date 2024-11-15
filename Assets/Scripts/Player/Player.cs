@@ -18,7 +18,7 @@ public class Player : MonoBehaviour {
     public string PlayerName = "";
     public const int _maxPlayerLife = 50;
     public const int _minPlayerLife = 0;
-    public int PlayerLife = _maxPlayerLife;
+    public static int PlayerLife = _maxPlayerLife;
     public bool IsPlayerAlive = true;
 
     public void SetUpPlayer(MapManager mapManager, InventoryManager inventoryManager, ItemManager itemManager, EnemyManager enemyManager) {
