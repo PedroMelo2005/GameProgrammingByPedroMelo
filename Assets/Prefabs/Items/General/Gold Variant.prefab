@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1001 &5406607287946349142
+--- !u!1001 &7459327746295472525
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -10,7 +10,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1053364414937133545, guid: 08b5b39094b9a5b4f84ce5f28ae1cca3, type: 3}
       propertyPath: message
-      value: Pickup Heal Potion
+      value: Pickup Gold
       objectReference: {fileID: 0}
     - target: {fileID: 3631633866060407474, guid: 08b5b39094b9a5b4f84ce5f28ae1cca3, type: 3}
       propertyPath: m_LocalPosition.x
@@ -54,31 +54,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4434701774514403531, guid: 08b5b39094b9a5b4f84ce5f28ae1cca3, type: 3}
       propertyPath: m_Name
-      value: HealPotion Variant
+      value: Gold Variant
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 5260623717439614563, guid: 08b5b39094b9a5b4f84ce5f28ae1cca3, type: 3}
+    m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 4434701774514403531, guid: 08b5b39094b9a5b4f84ce5f28ae1cca3, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: -2583404767578656593}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 08b5b39094b9a5b4f84ce5f28ae1cca3, type: 3}
---- !u!1 &8539697262634021533 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4434701774514403531, guid: 08b5b39094b9a5b4f84ce5f28ae1cca3, type: 3}
-  m_PrefabInstance: {fileID: 5406607287946349142}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &-2583404767578656593
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8539697262634021533}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2f8dbd87871af0544848f4a0f1cb7fed, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 

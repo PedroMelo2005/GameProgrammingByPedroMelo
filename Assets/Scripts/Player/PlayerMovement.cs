@@ -16,28 +16,30 @@ public class PlayerMovement : MonoBehaviour {
 
     // Update is called once per frame
     void Update() {
-        // Get Inputs
-        float moveX = Input.GetAxis("Horizontal"); // Input "A, D"
-        float moveZ = Input.GetAxis("Vertical"); // Input "W, S"
+        if (Player.PlayerCanMove) {
+            // Get Inputs
+            float moveX = Input.GetAxis("Horizontal"); // Input "A, D"
+            float moveZ = Input.GetAxis("Vertical"); // Input "W, S"
 
-        // Calculate the movement direction relative to the player's orientation
-        Vector3 moveDirection = (transform.right * moveX + transform.forward * moveZ).normalized;
+            // Calculate the movement direction relative to the player's orientation
+            Vector3 moveDirection = (transform.right * moveX + transform.forward * moveZ).normalized;
 
-        if (Input.GetKey(KeyCode.LeftShift) && Input.GetKey(KeyCode.W)) {
-            moveSpeed = 7.5f;
+            if (Input.GetKey(KeyCode.LeftShift) && Input.GetKey(KeyCode.W)) {
+                moveSpeed = 7.5f;
+            }
+            else if (Input.GetKey(KeyCode.LeftShift) && (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.S))) {
+                moveSpeed = 5.5f;
+            }
+            else {
+                moveSpeed = 4f;
+            }
+
+            // Apply velocity based movement to the Rigidbody
+            Vector3 velocity = moveDirection * moveSpeed;
+
+            // Preserve Y axis velocity for gravity
+            _playerScript.PhysicsBody.velocity = new Vector3(velocity.x, _playerScript.PhysicsBody.velocity.y, velocity.z);
         }
-        else if (Input.GetKey(KeyCode.LeftShift) && (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.S))) {
-            moveSpeed = 5.5f;
-        }
-        else {
-            moveSpeed = 4f;
-        }
-
-        // Apply velocity based movement to the Rigidbody
-        Vector3 velocity = moveDirection * moveSpeed;
-
-        // Preserve Y axis velocity for gravity
-        _playerScript.PhysicsBody.velocity = new Vector3(velocity.x, _playerScript.PhysicsBody.velocity.y, velocity.z);
     }
 
     // Old code from PlayerMovement

@@ -4,40 +4,30 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Rendering.VirtualTexturing;
 using UnityEngine.SceneManagement;
+using TMPro;
 
 public class UIManager : MonoBehaviour {
     [SerializeField] private GameManager GameManagerPrefab;
-    [SerializeField] private MainMenu _mainMenu;
     [SerializeField] private InGameHud _inGameHud;
     [SerializeField] private PauseMenu _pauseMenu;
+    [SerializeField] private TMP_Text interactionText;
 
+    public static UIManager instance;
     private GameManager _gameManager;
 
-    public static bool IsMainMenuActive = false;
-    public static bool IsPaused = false;
+    public void Awake() {
+        instance = this;
+    }
 
     // Start is called before the first frame update
     void Start() {
-        // Lock the Cursor to the game window and set "Cursor.visible" to true
-        Cursor.lockState = CursorLockMode.Confined;
-        Cursor.visible = true;
-
-        if (IsMainMenuActive == true) {
-            // Call the function "ActivateMainMenu()"
-            ActivateMainMenu();
-        }
-        else if (IsMainMenuActive == false) {
-            // Call the function "SetStartGame()"
-            SetStartGame();
-        }
+        SetStartGame();
     }
 
     // Update is called once per frame
     void Update() {
-        if (IsMainMenuActive == false) {
-            // Call the function "SetPauseGameMenu()"
-            SetPauseGameMenu();
-        }
+        // Call the function "CheckPauseGameMenu()"
+        CheckPauseMenu();
     }
 
     public void SetStartGame() {
@@ -48,23 +38,29 @@ public class UIManager : MonoBehaviour {
         // Lock the Cursor to the center of the game window and set "Cursor.visible" to false
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
+        // Set "PlayerCanMove" to true
+        Player.PlayerCanMove = true;
     }
 
-    // Function that call the function "SetMainMenu()"
-    public void ActivateMainMenu() {
-        _mainMenu.SetMainMenu();
-    }
-
-    // Call the functions "ContinueGame()" or "PauseGame()"
-    public void SetPauseGameMenu() {
+    // Check if the player pressed the keyboard key "Escape(Esc)" and call the respective function
+    public void CheckPauseMenu() {
         if (Input.GetKeyDown(KeyCode.Escape)) {
-            if (IsPaused == true) {
-                _pauseMenu.ContinueGame();
+            if (GameManager.IsGamePaused == true) {
+                _pauseMenu.ButtonContinueGame();
             }
-            else if (IsPaused == false) {
+            else if (GameManager.IsGamePaused == false) {
                 _pauseMenu.PauseGame();
             }
         }
+    }
+
+    public void EnableInteractionText(string text) {
+        interactionText.text = text + " (E)";
+        interactionText.gameObject.SetActive(true);
+    }
+
+    public void DisableInteractionText() {
+        interactionText.gameObject.SetActive(false);
     }
 
 }

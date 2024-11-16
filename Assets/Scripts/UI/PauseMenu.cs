@@ -27,14 +27,16 @@ public class PauseMenu : MonoBehaviour {
         // Freeze the time of the game
         Time.timeScale = 0f;
         // Assign the variable "IsPaused" to true
-        UIManager.IsPaused = true;
-        // Lock the Cursor to the game window and set "Cursor.visible" to true
-        Cursor.lockState = CursorLockMode.Confined;
+        GameManager.IsGamePaused = true;
+        // Unlock the Cursor and set "Cursor.visible" to true
+        Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
+        // Set "PlayerCanMove" to false
+        Player.PlayerCanMove = false;
     }
 
     // Set ContinueGame actions
-    public void ContinueGame() {
+    public void ButtonContinueGame() {
         // Make this gameObject don't be active in the scene
         gameObject.SetActive(false);
         // Call function "ActivateInGameHud()"
@@ -42,21 +44,21 @@ public class PauseMenu : MonoBehaviour {
         // Unfreeze the time of the game
         Time.timeScale = 1f;
         // Assign the variable "IsPaused" to false
-        UIManager.IsPaused = false;
+        GameManager.IsGamePaused = false;
         // Lock the Cursor to the center of the game window and set "Cursor.visible" to false
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
+        // Set "PlayerCanMove" to true
+        Player.PlayerCanMove = true;
     }
 
-    public void BackToMainMenu() {
-        // Assign the variable "IsMainMenuActive" to true
-        UIManager.IsMainMenuActive = true;
+    public void ButtonBackToMainMenu() {
         // Change the Scene of the game
-        SceneManager.LoadScene("MainMenu");
+        SceneManager.LoadScene(ConstVariables.MainMenuSceneName);
         // Unfreeze the time of the game
         Time.timeScale = 1f;
         // Assign the variable "IsPaused" to false
-        UIManager.IsPaused = false;
+        GameManager.IsGamePaused = false;
         // Lock the Cursor to the game window and set "Cursor.visible" to true
         Cursor.lockState = CursorLockMode.Confined;
         Cursor.visible = true;

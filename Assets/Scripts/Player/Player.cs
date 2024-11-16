@@ -6,6 +6,7 @@ using UnityEngine;
 public class Player : MonoBehaviour {
     [SerializeField] private PlayerMovement _playerMovementScript;
     [SerializeField] private PlayerCamera _playerCameraScript;
+    [SerializeField] private PlayerInteraction _playerInteraction;
     public Rigidbody PhysicsBody;
 
     // Create Instances
@@ -15,10 +16,11 @@ public class Player : MonoBehaviour {
     ItemManager itemManager;
     EnemyManager enemyManager;
 
+    public static bool PlayerCanMove = true;
     public string PlayerName = "";
     public const int _maxPlayerLife = 50;
     public const int _minPlayerLife = 0;
-    public int PlayerLife = _maxPlayerLife;
+    public static int PlayerLife = _maxPlayerLife;
     public bool IsPlayerAlive = true;
 
     public void SetUpPlayer(MapManager mapManager, InventoryManager inventoryManager, ItemManager itemManager, EnemyManager enemyManager) {
