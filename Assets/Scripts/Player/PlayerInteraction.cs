@@ -27,11 +27,12 @@ public class PlayerInteraction : MonoBehaviour {
 
         // Check if colliders with anything within player reach
         if (Physics.Raycast(ray, out hit, playerReach)) {
+            Debug.Log(hit.collider); // DEBUG
 
             // Check if is looking at an interactable object
             if (hit.collider.tag == ConstVariables.InteractableTagName) {
                 Interactable newInteractable = hit.collider.GetComponent<Interactable>();
-                Debug.Log(hit.collider);
+                Debug.Log(hit.collider); // DEBUG
 
                 if (currentInteractable && newInteractable != currentInteractable) {
                     DisableCurrentInteractable();
