@@ -7,7 +7,7 @@ public class PlayerInteraction : MonoBehaviour {
     [SerializeField] private Player _playerScript;
     private Interactable currentInteractable;
 
-    public float playerReach = 4f;
+    public float playerReach = 3f;
 
     // Update is called once per frame
     void Update() {
