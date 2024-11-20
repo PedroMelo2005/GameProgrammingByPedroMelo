@@ -220,6 +220,22 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 312546276145308083, guid: 8fa53487652ef194080fd09cdae4595a, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 312546276145308083, guid: 8fa53487652ef194080fd09cdae4595a, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 312546276145308083, guid: 8fa53487652ef194080fd09cdae4595a, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 312546276145308083, guid: 8fa53487652ef194080fd09cdae4595a, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2327921621660185713, guid: 8fa53487652ef194080fd09cdae4595a, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -298,6 +314,22 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2327921621660185713, guid: 8fa53487652ef194080fd09cdae4595a, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5235384744132476280, guid: 8fa53487652ef194080fd09cdae4595a, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5235384744132476280, guid: 8fa53487652ef194080fd09cdae4595a, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5235384744132476280, guid: 8fa53487652ef194080fd09cdae4595a, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5235384744132476280, guid: 8fa53487652ef194080fd09cdae4595a, type: 3}
+      propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8310668273196687727, guid: 8fa53487652ef194080fd09cdae4595a, type: 3}

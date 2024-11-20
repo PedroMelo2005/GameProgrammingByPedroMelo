@@ -10,7 +10,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1053364414937133545, guid: 08b5b39094b9a5b4f84ce5f28ae1cca3, type: 3}
       propertyPath: message
-      value: Pickup Gold
+      value: Pickup
       objectReference: {fileID: 0}
     - target: {fileID: 3631633866060407474, guid: 08b5b39094b9a5b4f84ce5f28ae1cca3, type: 3}
       propertyPath: m_LocalPosition.x

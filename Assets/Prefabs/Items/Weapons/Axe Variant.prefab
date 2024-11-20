@@ -55,43 +55,13 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: fcf6aa20fa9b08f4daf317de15248a1a, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1551681701949015432}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fcf6aa20fa9b08f4daf317de15248a1a, type: 3}
 --- !u!4 &4963766063324251446 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: fcf6aa20fa9b08f4daf317de15248a1a, type: 3}
   m_PrefabInstance: {fileID: 4857254871078380253}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &5740126088687034252 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: fcf6aa20fa9b08f4daf317de15248a1a, type: 3}
-  m_PrefabInstance: {fileID: 4857254871078380253}
-  m_PrefabAsset: {fileID: 0}
---- !u!64 &1551681701949015432
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5740126088687034252}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 2862683227903276444, guid: fcf6aa20fa9b08f4daf317de15248a1a, type: 3}
 --- !u!1001 &8132463557639240566
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -102,7 +72,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1053364414937133545, guid: 08b5b39094b9a5b4f84ce5f28ae1cca3, type: 3}
       propertyPath: message
-      value: Pickup Axe
+      value: Pickup
       objectReference: {fileID: 0}
     - target: {fileID: 3631633866060407474, guid: 08b5b39094b9a5b4f84ce5f28ae1cca3, type: 3}
       propertyPath: m_LocalPosition.x
@@ -147,6 +117,26 @@ PrefabInstance:
     - target: {fileID: 4434701774514403531, guid: 08b5b39094b9a5b4f84ce5f28ae1cca3, type: 3}
       propertyPath: m_Name
       value: Axe Variant
+      objectReference: {fileID: 0}
+    - target: {fileID: 7396454029622771961, guid: 08b5b39094b9a5b4f84ce5f28ae1cca3, type: 3}
+      propertyPath: m_Size.x
+      value: 0.3548994
+      objectReference: {fileID: 0}
+    - target: {fileID: 7396454029622771961, guid: 08b5b39094b9a5b4f84ce5f28ae1cca3, type: 3}
+      propertyPath: m_Size.y
+      value: 1.533494
+      objectReference: {fileID: 0}
+    - target: {fileID: 7396454029622771961, guid: 08b5b39094b9a5b4f84ce5f28ae1cca3, type: 3}
+      propertyPath: m_Size.z
+      value: 0.09
+      objectReference: {fileID: 0}
+    - target: {fileID: 7396454029622771961, guid: 08b5b39094b9a5b4f84ce5f28ae1cca3, type: 3}
+      propertyPath: m_Center.x
+      value: 0.12657869
+      objectReference: {fileID: 0}
+    - target: {fileID: 7396454029622771961, guid: 08b5b39094b9a5b4f84ce5f28ae1cca3, type: 3}
+      propertyPath: m_Center.y
+      value: 0.100541115
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 5260623717439614563, guid: 08b5b39094b9a5b4f84ce5f28ae1cca3, type: 3}

@@ -2,20 +2,18 @@
 | CTM Notes is a checklist note of (Corrections To Make) --> Coded by Pedro Melo <-- |
 |------------------------------------------------------------------------------------|
 
-0- Change the Item script (should not be an Monobehavior and should contain information of damage, icon, name, everything)
+0- Fix to make the inventory
 
-1- Change the size of the prefabs and in the scripts to "sizeRoom = 10" --> OK
+1- Make the drop and pickup system
 
-2- Add a roof to the Rooms prefabs --> OK
+2- Change the Item script (should not be an Monobehavior and should contain information of damage, icon, name, everything)
 
-3- Fix to make the player spawn at the center of the map (player need to spawn in the "welcomeRoom") --> OK
+3- Fix the RoomBase that is receiving the scripts (but right now is null because nothing is passing those references)
 
-4- Fix the RoomBase that is receiving the scripts (but right now is null because nothing is passing those references)
+4- Fix the CombatRoom (is not working right now with the code of the console game assignment)
 
-5- Fix the CombatRoom (is not working right now with the code of the console game assignment)
+5- Fix the PuzzleRoom riddles messages
 
-6- Fix the PuzzleRoom riddles messages
+6- Fix the order that the collision works (right now the debug message show that first the player enter in the "newRoom" and them appears that it left the "oldRoom")
 
-7- Fix the order that the collision works (right now the debug message show that first the player enter in the "newRoom" and them appears that it left the "oldRoom")
-
-8- Fix how you access variables and funciton of other scripts. (how to create "global varibles")
+7- Fix how you access variables and funciton of other scripts. (how to create "global varibles")
