@@ -13,7 +13,15 @@ PrefabInstance:
       value: Open
       objectReference: {fileID: 0}
     - target: {fileID: 1406969905779134717, guid: 33c3297602617b043abf190c0fe3e135, type: 3}
+      propertyPath: onInteraction.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1406969905779134717, guid: 33c3297602617b043abf190c0fe3e135, type: 3}
       propertyPath: onInteraction.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1406969905779134717, guid: 33c3297602617b043abf190c0fe3e135, type: 3}
+      propertyPath: onInteraction.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1406969905779134717, guid: 33c3297602617b043abf190c0fe3e135, type: 3}
@@ -21,11 +29,27 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 4524533836356647188}
     - target: {fileID: 1406969905779134717, guid: 33c3297602617b043abf190c0fe3e135, type: 3}
+      propertyPath: onInteraction.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 4524533836356647188}
+    - target: {fileID: 1406969905779134717, guid: 33c3297602617b043abf190c0fe3e135, type: 3}
+      propertyPath: onInteraction.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1406969905779134717, guid: 33c3297602617b043abf190c0fe3e135, type: 3}
       propertyPath: onInteraction.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: set_runtimeAnimatorController
       objectReference: {fileID: 0}
     - target: {fileID: 1406969905779134717, guid: 33c3297602617b043abf190c0fe3e135, type: 3}
+      propertyPath: onInteraction.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: set_runtimeAnimatorController
+      objectReference: {fileID: 0}
+    - target: {fileID: 1406969905779134717, guid: 33c3297602617b043abf190c0fe3e135, type: 3}
       propertyPath: onInteraction.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: UnityEngine.Animator, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 1406969905779134717, guid: 33c3297602617b043abf190c0fe3e135, type: 3}
+      propertyPath: onInteraction.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
       value: UnityEngine.Animator, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 1406969905779134717, guid: 33c3297602617b043abf190c0fe3e135, type: 3}
@@ -41,8 +65,28 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 9100000, guid: e5c29154226c70f458b7b60c19587e34, type: 2}
     - target: {fileID: 1406969905779134717, guid: 33c3297602617b043abf190c0fe3e135, type: 3}
+      propertyPath: onInteraction.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 9100000, guid: e5c29154226c70f458b7b60c19587e34, type: 2}
+    - target: {fileID: 1406969905779134717, guid: 33c3297602617b043abf190c0fe3e135, type: 3}
       propertyPath: onInteraction.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.RuntimeAnimatorController, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 1406969905779134717, guid: 33c3297602617b043abf190c0fe3e135, type: 3}
+      propertyPath: onInteraction.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.RuntimeAnimatorController, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 2376060885767447512, guid: 33c3297602617b043abf190c0fe3e135, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.65
+      objectReference: {fileID: 0}
+    - target: {fileID: 2376060885767447512, guid: 33c3297602617b043abf190c0fe3e135, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.65
+      objectReference: {fileID: 0}
+    - target: {fileID: 2376060885767447512, guid: 33c3297602617b043abf190c0fe3e135, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.65
       objectReference: {fileID: 0}
     - target: {fileID: 2376060885767447512, guid: 33c3297602617b043abf190c0fe3e135, type: 3}
       propertyPath: m_LocalPosition.x

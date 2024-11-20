@@ -42,39 +42,4 @@ public class PlayerMovement : MonoBehaviour {
         }
     }
 
-    // Old code from PlayerMovement
-    void OldVariables() {
-        /*
-        [SerializeField] CharacterController controller;
-
-        float speed = 4f;
-        */
-    }
-
-    void OldStart() {
-        /*
-        controller = GetComponent<CharacterController>();
-        */
-    }
-
-    void OldUpdate() {
-        /*
-        float x = Input.GetAxis("Horizontal");
-        float z = Input.GetAxis("Vertical");
-
-        Vector3 move = (transform.right * x + transform.forward * z).normalized;
-
-        if (Input.GetKey(KeyCode.LeftShift) && Input.GetKey(KeyCode.W)) {
-            speed = 8f;
-        }
-        else if (Input.GetKey(KeyCode.LeftShift) && (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.S))) {
-            speed = 7f;
-        }
-        else {
-            speed = 5f;
-        }
-
-        controller.Move(move * speed * Time.deltaTime);
-        */
-    }
 }

@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class PlayerInteraction : MonoBehaviour {
     [SerializeField] private Player _playerScript;
+    [SerializeField] private GameObject RaycastPoint;
     private Interactable currentInteractable;
 
     public float playerReach = 3f;
@@ -14,16 +15,18 @@ public class PlayerInteraction : MonoBehaviour {
         // Call function "CheckInteraction"
         CheckInteraction();
 
-        // Check if player press keyboard key "E"
-        if (Input.GetKeyDown(KeyCode.E) && currentInteractable != null) {
-            currentInteractable.Interact();
+        if (Player.PlayerCanMove) {
+            // Check if player press keyboard key "E"
+            if (Input.GetKeyDown(KeyCode.E) && currentInteractable != null) {
+                currentInteractable.Interact();
+            }
         }
     }
 
     // Check if the player is interacting with an interactable object
     private void CheckInteraction() {
         RaycastHit hit;
-        Ray ray = new Ray(Camera.main.transform.position, Camera.main.transform.forward);
+        Ray ray = new Ray(RaycastPoint.transform.position, RaycastPoint.transform.forward);
 
         // Check if colliders with anything within player reach
         if (Physics.Raycast(ray, out hit, playerReach)) {

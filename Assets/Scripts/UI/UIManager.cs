@@ -40,11 +40,6 @@ public class UIManager : MonoBehaviour {
         _gameManager = Instantiate(GameManagerPrefab);
         // Call function "OnStartGame()"
         _inGameHud.OnStartGame();
-        // Lock the Cursor to the center of the game window and set "Cursor.visible" to false
-        Cursor.lockState = CursorLockMode.Locked;
-        Cursor.visible = false;
-        // Set "PlayerCanMove" to true
-        Player.PlayerCanMove = true;
     }
 
     // Check if the player pressed the keyboard key "Escape(Esc)" and call the respective function

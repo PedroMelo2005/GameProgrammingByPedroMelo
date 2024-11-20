@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using Unity.Hierarchy;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class Player : MonoBehaviour {
@@ -10,7 +11,7 @@ public class Player : MonoBehaviour {
     public Rigidbody PhysicsBody;
 
     // Create Instances
-    public static Player Instance; // Global Static "Instance" instance of type "Player"
+    public static Player Instance; // Global Static "instance" of type "Player"
     MapManager mapManager;
     ItemManager itemManager;
     EnemyManager enemyManager;

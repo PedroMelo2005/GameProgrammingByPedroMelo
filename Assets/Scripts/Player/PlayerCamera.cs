@@ -12,14 +12,12 @@ public class PlayerCamera : MonoBehaviour {
 
     // Start is called before the first frame update
     void Start() {
-
+        DeactivateCursor();
     }
 
     // Update is called once per frame
     void Update() {
         if (Player.PlayerCanMove) {
-
-
             // Get Inputs
             float mouseX = Input.GetAxis("Mouse X") * mouseSensibility * Time.deltaTime; // Input "Mouse Left, Right"
             float mouseY = Input.GetAxis("Mouse Y") * mouseSensibility * Time.deltaTime; // Input "Mouse Up and Down"
@@ -34,6 +32,20 @@ public class PlayerCamera : MonoBehaviour {
             // Apply the horizontal rotation to the entire player body
             _playerScript.PhysicsBody.rotation = Quaternion.Euler(0f, horizontalFacing, 0f);
         }
+    }
+
+    public static void ActivateCursor() {
+        // Unlock the Cursor and set "Cursor.visible" to true
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
+        Player.PlayerCanMove = false;
+    }
+
+    public static void DeactivateCursor() {
+        // Lock the Cursor to the center of the game window and set "Cursor.visible" to false
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
+        Player.PlayerCanMove = true;
     }
 
 }

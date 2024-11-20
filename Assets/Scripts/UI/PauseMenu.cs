@@ -18,6 +18,10 @@ public class PauseMenu : MonoBehaviour {
 
     }
 
+    public void OnStartGame() {
+
+    }
+
     // Set PauseGame actions
     public void PauseGame() {
         // Make this gameObject be active in the scene
@@ -28,15 +32,13 @@ public class PauseMenu : MonoBehaviour {
         Time.timeScale = 0f;
         // Assign the variable "IsPaused" to true
         GameManager.IsGamePaused = true;
-        // Unlock the Cursor and set "Cursor.visible" to true
-        Cursor.lockState = CursorLockMode.None;
-        Cursor.visible = true;
-        // Set "PlayerCanMove" to false
-        Player.PlayerCanMove = false;
+        PlayerCamera.ActivateCursor();
     }
 
     // Set ContinueGame actions
     public void ButtonContinueGame() {
+        // Make this gameObject don't be active in the scene
+        gameObject.SetActive(false);
         // Make this gameObject don't be active in the scene
         gameObject.SetActive(false);
         // Call function "ActivateInGameHud()"
@@ -45,11 +47,7 @@ public class PauseMenu : MonoBehaviour {
         Time.timeScale = 1f;
         // Assign the variable "IsPaused" to false
         GameManager.IsGamePaused = false;
-        // Lock the Cursor to the center of the game window and set "Cursor.visible" to false
-        Cursor.lockState = CursorLockMode.Locked;
-        Cursor.visible = false;
-        // Set "PlayerCanMove" to true
-        Player.PlayerCanMove = true;
+        PlayerCamera.DeactivateCursor();
     }
 
     public void ButtonBackToMainMenu() {
@@ -59,9 +57,7 @@ public class PauseMenu : MonoBehaviour {
         Time.timeScale = 1f;
         // Assign the variable "IsPaused" to false
         GameManager.IsGamePaused = false;
-        // Lock the Cursor to the game window and set "Cursor.visible" to true
-        Cursor.lockState = CursorLockMode.Confined;
-        Cursor.visible = true;
+        PlayerCamera.ActivateCursor();
     }
 
 }
