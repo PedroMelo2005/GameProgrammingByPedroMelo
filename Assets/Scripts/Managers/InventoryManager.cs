@@ -1,19 +1,17 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class InventoryManager : MonoBehaviour {
-    [SerializeField] Inventory inventoryPrefab;
-    [SerializeField] Sprite[] spritesItem;
+    public List<InventoryPanel> panelList = new List<InventoryPanel>();
 
-    // Create Instances
-    private Inventory _inventory;
-    ItemManager itemManager;
+    void Start () {
+        panelList = GetComponents<InventoryPanel>().ToList();
+    }
 
-    public void SetUpInventoryManager(ItemManager itemManager) {
-        Debug.Log("SetUp the \"InventoryManager\""); // DEBUG
-        _inventory = Instantiate(inventoryPrefab, transform);
-        this.itemManager = itemManager;
+    void Update() {
+
     }
 
 }

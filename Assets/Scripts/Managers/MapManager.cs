@@ -19,7 +19,7 @@ public class MapManager : MonoBehaviour {
     // Create a List "roomList" of type GameObject
     List<RoomBase> roomList;
 
-    public void SetUpMapManager(PlayerManager playerManager, InventoryManager inventoryManager, ItemManager itemManager, EnemyManager enemyManager) {
+    public void SetUpMapManager(PlayerManager playerManager, ItemManager itemManager, EnemyManager enemyManager) {
         Debug.Log("SetUp the \"MapManager\""); // DEBUG
         // Initialize the "roomList"
         Debug.Log("Initialize the \"roomList\""); // DEBUG

@@ -20,6 +20,7 @@ MonoBehaviour:
   itemType: 0
   slotType: 0
   frequency: 10
+  slotSize: {x: 1, y: 4}
   image: {fileID: 0}
   backgroundColor: {r: 1, g: 0.39741516, b: 0, a: 0}
   prefab: {fileID: 7671260012147370973, guid: 7e81c68509fdeab4793c258472f90c89, type: 3}

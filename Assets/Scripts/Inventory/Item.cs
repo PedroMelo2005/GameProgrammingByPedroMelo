@@ -7,11 +7,12 @@ public abstract class Item : ScriptableObject {
     public string ItemName;
     [Multiline] public string description;
     public int price;
-    public int id;
+    public string id = System.Guid.NewGuid().ToString();
     public Rarity rarity;
     public ITemType itemType;
     public SlotType slotType;
     public Frequency frequency;
+    public Vector2Int slotSize;
     public Sprite image;
     public Color backgroundColor;
     public GameObject prefab;

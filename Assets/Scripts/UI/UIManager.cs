@@ -10,10 +10,13 @@ public class UIManager : MonoBehaviour {
     [SerializeField] private GameManager GameManagerPrefab;
     [SerializeField] private InGameHud _inGameHud;
     [SerializeField] private PauseMenu _pauseMenu;
+    [SerializeField] private GameObject _inventoryMenu;
     [SerializeField] private TMP_Text interactionText;
 
     public static UIManager instance;
     private GameManager _gameManager;
+
+    public bool IsInvnetoryMenuOpen = false;
 
     public void Awake() {
         instance = this;
@@ -28,6 +31,8 @@ public class UIManager : MonoBehaviour {
     void Update() {
         // Call the function "CheckPauseGameMenu()"
         CheckPauseMenu();
+        // Call the function "CheckInventoryMenu()"
+        CheckInventoryMenu();
     }
 
     public void SetStartGame() {
@@ -61,6 +66,17 @@ public class UIManager : MonoBehaviour {
 
     public void DisableInteractionText() {
         interactionText.gameObject.SetActive(false);
+    }
+
+    public void CheckInventoryMenu() {
+        if (Input.GetKeyDown(KeyCode.Tab) && IsInvnetoryMenuOpen == true) {
+            _inventoryMenu.SetActive(false);
+            IsInvnetoryMenuOpen = false;
+        }
+        else if (Input.GetKeyDown(KeyCode.Tab) && IsInvnetoryMenuOpen == false) {
+            _inventoryMenu.SetActive(true);
+            IsInvnetoryMenuOpen = true;
+        }
     }
 
 }

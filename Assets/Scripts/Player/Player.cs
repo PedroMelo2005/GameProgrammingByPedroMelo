@@ -12,7 +12,6 @@ public class Player : MonoBehaviour {
     // Create Instances
     public static Player Instance; // Global Static "Instance" instance of type "Player"
     MapManager mapManager;
-    InventoryManager inventoryManager;
     ItemManager itemManager;
     EnemyManager enemyManager;
 
@@ -23,10 +22,9 @@ public class Player : MonoBehaviour {
     public static int PlayerLife = _maxPlayerLife;
     public bool IsPlayerAlive = true;
 
-    public void SetUpPlayer(MapManager mapManager, InventoryManager inventoryManager, ItemManager itemManager, EnemyManager enemyManager) {
+    public void SetUpPlayer(MapManager mapManager, ItemManager itemManager, EnemyManager enemyManager) {
         Debug.Log("SetUp the \"Player\"");
         this.mapManager = mapManager;
-        this.inventoryManager = inventoryManager;
         this.itemManager = itemManager;
         this.enemyManager = enemyManager;
     }

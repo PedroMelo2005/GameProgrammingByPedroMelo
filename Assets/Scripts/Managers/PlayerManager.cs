@@ -8,16 +8,14 @@ public class PlayerManager : MonoBehaviour {
     // Create Instances
     public Player player;
     public MapManager mapManager;
-    public InventoryManager inventoryManager;
     public ItemManager itemManager;
     public EnemyManager enemyManager;
 
-    public void SetUpPlayerManager(MapManager mapManager, InventoryManager inventoryManager, ItemManager itemManager, EnemyManager enemyManager) {
+    public void SetUpPlayerManager(MapManager mapManager, ItemManager itemManager, EnemyManager enemyManager) {
         Debug.Log("SetUp the \"PlayerManager\"");
         player = Instantiate(playerPrefab, transform);
-        player.SetUpPlayer(mapManager, inventoryManager, itemManager, enemyManager);
+        player.SetUpPlayer(mapManager, itemManager, enemyManager);
         this.mapManager = mapManager;
-        this.inventoryManager = inventoryManager;
         this.enemyManager = enemyManager;
     }
 

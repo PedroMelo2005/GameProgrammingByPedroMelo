@@ -8,6 +8,9 @@ public class ItemData {
     public Item item;
     public bool isRotated = false;
     public Vector2Int matrixPosition;
-    Vector3 slotPosition = Vector3.zero;
+    public Vector3 slotPosition = Vector3.zero;
+    public InventoryPanel.Type slotPanelType;
+    public GameObject myLootContainer;
+    public int myLootContainerId;
 
 }
