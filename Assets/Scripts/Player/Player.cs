@@ -16,12 +16,16 @@ public class Player : MonoBehaviour {
     ItemManager itemManager;
     EnemyManager enemyManager;
 
-    public static bool PlayerCanMove = true;
+    public bool PlayerCanMove = true;
     public string PlayerName = "";
     public const int _maxPlayerLife = 50;
     public const int _minPlayerLife = 0;
     public static int PlayerLife = _maxPlayerLife;
     public bool IsPlayerAlive = true;
+
+    private void Awake() {
+        Instance = this;
+    }
 
     public void SetUpPlayer(MapManager mapManager, ItemManager itemManager, EnemyManager enemyManager) {
         Debug.Log("SetUp the \"Player\"");
@@ -68,6 +72,20 @@ public class Player : MonoBehaviour {
         Inventory.Instance.InventoryList.Clear();
         }
         */
+    }
+
+    public void ActivateCursor() {
+        // Unlock the Cursor and set "Cursor.visible" to true
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
+        PlayerCanMove = false;
+    }
+
+    public void DeactivateCursor() {
+        // Lock the Cursor to the center of the game window and set "Cursor.visible" to false
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
+        PlayerCanMove = true;
     }
 
 }

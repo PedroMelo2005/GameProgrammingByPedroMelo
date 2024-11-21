@@ -13,13 +13,13 @@ public class UIManager : MonoBehaviour {
     [SerializeField] private GameObject _inventoryMenu;
     [SerializeField] private TMP_Text interactionText;
 
-    public static UIManager instance;
+    public static UIManager Instance;
     private GameManager _gameManager;
 
-    public bool IsInvnetoryMenuOpen = false;
+    public bool IsInventoryMenuOpen = false;
 
     public void Awake() {
-        instance = this;
+        Instance = this;
     }
 
     // Start is called before the first frame update
@@ -36,10 +36,9 @@ public class UIManager : MonoBehaviour {
     }
 
     public void SetStartGame() {
-        // Instantiate the gameManagerPrefab
-        _gameManager = Instantiate(GameManagerPrefab);
-        // Call function "OnStartGame()"
+        // Call functions "OnStartGame()"
         _inGameHud.OnStartGame();
+        _pauseMenu.OnStartGame();
     }
 
     // Check if the player pressed the keyboard key "Escape(Esc)" and call the respective function
@@ -64,13 +63,13 @@ public class UIManager : MonoBehaviour {
     }
 
     public void CheckInventoryMenu() {
-        if (Input.GetKeyDown(KeyCode.Tab) && IsInvnetoryMenuOpen == true) {
+        if (Input.GetKeyDown(KeyCode.Tab) && IsInventoryMenuOpen == true) {
             _inventoryMenu.SetActive(false);
-            IsInvnetoryMenuOpen = false;
+            IsInventoryMenuOpen = false;
         }
-        else if (Input.GetKeyDown(KeyCode.Tab) && IsInvnetoryMenuOpen == false) {
+        else if (Input.GetKeyDown(KeyCode.Tab) && IsInventoryMenuOpen == false) {
             _inventoryMenu.SetActive(true);
-            IsInvnetoryMenuOpen = true;
+            IsInventoryMenuOpen = true;
         }
     }
 

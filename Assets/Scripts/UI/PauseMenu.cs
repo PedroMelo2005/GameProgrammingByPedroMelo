@@ -10,7 +10,7 @@ public class PauseMenu : MonoBehaviour {
     // Start is called before the first frame update
     // Make this gameObject don't be active in the scene
     void Start() {
-        gameObject.SetActive(false);
+
     }
     
     // Update is called once per frame
@@ -19,7 +19,7 @@ public class PauseMenu : MonoBehaviour {
     }
 
     public void OnStartGame() {
-
+        gameObject.SetActive(false);
     }
 
     // Set PauseGame actions
@@ -32,7 +32,7 @@ public class PauseMenu : MonoBehaviour {
         Time.timeScale = 0f;
         // Assign the variable "IsPaused" to true
         GameManager.IsGamePaused = true;
-        PlayerCamera.ActivateCursor();
+        Player.Instance.ActivateCursor();
     }
 
     // Set ContinueGame actions
@@ -47,7 +47,7 @@ public class PauseMenu : MonoBehaviour {
         Time.timeScale = 1f;
         // Assign the variable "IsPaused" to false
         GameManager.IsGamePaused = false;
-        PlayerCamera.DeactivateCursor();
+        Player.Instance.DeactivateCursor();
     }
 
     public void ButtonBackToMainMenu() {
@@ -57,7 +57,7 @@ public class PauseMenu : MonoBehaviour {
         Time.timeScale = 1f;
         // Assign the variable "IsPaused" to false
         GameManager.IsGamePaused = false;
-        PlayerCamera.ActivateCursor();
+        Player.Instance.ActivateCursor();
     }
 
 }

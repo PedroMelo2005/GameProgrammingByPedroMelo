@@ -2,18 +2,20 @@
 | CTM Notes is a checklist note of (Corrections To Make) --> Coded by Pedro Melo <-- |
 |------------------------------------------------------------------------------------|
 
-0- Fix to make the inventory
+1- Make SoundManager and UI buttons need to have sounds
 
-1- Make the drop and pickup system
+2- Fix to make the inventory
 
-2- Change the Item script (should not be an Monobehavior and should contain information of damage, icon, name, everything)
+3- Make the drop and pickup system
 
-3- Fix the RoomBase that is receiving the scripts (but right now is null because nothing is passing those references)
+4- Change the Item script (should not be an Monobehavior and should contain information of damage, icon, name, everything)
 
-4- Fix the CombatRoom (is not working right now with the code of the console game assignment)
+5- Fix the RoomBase that is receiving the scripts (but right now is null because nothing is passing those references)
 
-5- Fix the PuzzleRoom riddles messages
+6- Fix the CombatRoom (is not working right now with the code of the console game assignment)
 
-6- Fix the order that the collision works (right now the debug message show that first the player enter in the "newRoom" and them appears that it left the "oldRoom")
+7- Fix the PuzzleRoom riddles messages
 
-7- Fix how you access variables and funciton of other scripts. (how to create "global varibles")
+8- Fix the order that the collision works (right now the debug message show that first the player enter in the "newRoom" and them appears that it left the "oldRoom")
+
+9- Fix how you access variables and funciton of other scripts. (how to create "global varibles")

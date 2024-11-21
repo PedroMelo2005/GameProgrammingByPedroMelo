@@ -16,7 +16,7 @@ public class PlayerMovement : MonoBehaviour {
 
     // Update is called once per frame
     void Update() {
-        if (Player.PlayerCanMove) {
+        if (Player.Instance.PlayerCanMove) {
             // Get Inputs
             float moveX = Input.GetAxis("Horizontal"); // Input "A, D"
             float moveZ = Input.GetAxis("Vertical"); // Input "W, S"

@@ -15,7 +15,7 @@ public class PlayerInteraction : MonoBehaviour {
         // Call function "CheckInteraction"
         CheckInteraction();
 
-        if (Player.PlayerCanMove) {
+        if (Player.Instance.PlayerCanMove) {
             // Check if player press keyboard key "E"
             if (Input.GetKeyDown(KeyCode.E) && currentInteractable != null) {
                 currentInteractable.Interact();
@@ -30,7 +30,6 @@ public class PlayerInteraction : MonoBehaviour {
 
         // Check if colliders with anything within player reach
         if (Physics.Raycast(ray, out hit, playerReach)) {
-            Debug.Log(hit.collider); // DEBUG
 
             // Check if is looking at an interactable object
             if (hit.collider.tag == ConstVariables.InteractableTagName) {
@@ -60,11 +59,11 @@ public class PlayerInteraction : MonoBehaviour {
 
     private void SetNewCurrentInteractable(Interactable newInteractable) {
         currentInteractable = newInteractable;
-        UIManager.instance.EnableInteractionText(currentInteractable.message);
+        UIManager.Instance.EnableInteractionText(currentInteractable.message);
     }
 
     private void DisableCurrentInteractable() {
-        UIManager.instance.DisableInteractionText();
+        UIManager.Instance.DisableInteractionText();
 
         if (currentInteractable) {
             currentInteractable = null;
