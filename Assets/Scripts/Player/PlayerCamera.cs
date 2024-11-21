@@ -6,7 +6,7 @@ public class PlayerCamera : MonoBehaviour {
     [SerializeField] private Player _playerScript;
     [SerializeField] private Transform playerHead;
 
-    private float mouseSensibility = 120f;
+    private float mouseSensibility = 140f;
     private float horizontalFacing = 0f;
     private float verticalFacing = 0f;
 

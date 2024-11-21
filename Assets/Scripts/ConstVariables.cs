@@ -6,5 +6,4 @@ public class ConstVariables {
     public const string GameSceneName = "GameScene";
     public const string MainMenuSceneName = "MainMenuScene";
     public const string InteractableTagName = "Interactable";
-
 }
