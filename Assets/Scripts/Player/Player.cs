@@ -16,12 +16,12 @@ public class Player : MonoBehaviour {
     ItemManager itemManager;
     EnemyManager enemyManager;
 
-    public bool PlayerCanMove = true;
     public string PlayerName = "";
-    public const int _maxPlayerLife = 50;
-    public const int _minPlayerLife = 0;
-    public static int PlayerLife = _maxPlayerLife;
-    public bool IsPlayerAlive = true;
+    public const float _maxPlayerLife = 50f;
+    public const float _minPlayerLife = 0f;
+    public float PlayerLife = _maxPlayerLife;
+    public bool IsPlayerAlive;
+    public bool PlayerCanMove;
 
     private void Awake() {
         Instance = this;
@@ -29,6 +29,8 @@ public class Player : MonoBehaviour {
 
     public void SetUpPlayer(MapManager mapManager, ItemManager itemManager, EnemyManager enemyManager) {
         Debug.Log("SetUp the \"Player\"");
+        // Call function ResetPlayerStats
+        ResetPlayerStats();
         this.mapManager = mapManager;
         this.itemManager = itemManager;
         this.enemyManager = enemyManager;

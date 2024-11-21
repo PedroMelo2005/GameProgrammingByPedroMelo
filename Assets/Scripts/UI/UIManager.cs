@@ -10,12 +10,12 @@ public class UIManager : MonoBehaviour {
     [SerializeField] private GameManager GameManagerPrefab;
     [SerializeField] private InGameHud _inGameHud;
     [SerializeField] private PauseMenu _pauseMenu;
-    [SerializeField] private GameObject _inventoryMenu;
     [SerializeField] private TMP_Text interactionText;
 
     public static UIManager Instance;
     private GameManager _gameManager;
 
+    [SerializeField] private GameObject _inventoryMenu; // Temporary until I create the InventoryMenu script
     public bool IsInventoryMenuOpen = false;
 
     public void Awake() {
@@ -39,6 +39,7 @@ public class UIManager : MonoBehaviour {
         // Call functions "OnStartGame()"
         _inGameHud.OnStartGame();
         _pauseMenu.OnStartGame();
+        _inventoryMenu.SetActive(false); // Temporary until I create the InventoryMenu script
     }
 
     // Check if the player pressed the keyboard key "Escape(Esc)" and call the respective function

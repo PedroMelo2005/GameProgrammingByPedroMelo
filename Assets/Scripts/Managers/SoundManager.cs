@@ -3,10 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class SoundManager : MonoBehaviour {
-    public AudioSource audioSource;
-    public AudioClip hoverSound;
-    public AudioClip clickSound;
-
     public enum Sound {
         OnClick1_SFX,
         OnClick2_SFX,
