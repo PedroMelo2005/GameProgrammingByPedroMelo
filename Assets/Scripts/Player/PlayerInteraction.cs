@@ -5,10 +5,10 @@ using UnityEngine;
 
 public class PlayerInteraction : MonoBehaviour {
     [SerializeField] private Player _playerScript;
-    [SerializeField] private GameObject RaycastPoint;
+    [SerializeField] private GameObject raycastPoint;
     private Interactable currentInteractable;
 
-    public float playerReach = 3f;
+    private float playerReach = 3f;
 
     // Update is called once per frame
     void Update() {
@@ -26,7 +26,7 @@ public class PlayerInteraction : MonoBehaviour {
     // Check if the player is interacting with an interactable object
     private void CheckInteraction() {
         RaycastHit hit;
-        Ray ray = new Ray(RaycastPoint.transform.position, RaycastPoint.transform.forward);
+        Ray ray = new Ray(raycastPoint.transform.position, raycastPoint.transform.forward);
 
         // Check if colliders with anything within player reach
         if (Physics.Raycast(ray, out hit, playerReach)) {

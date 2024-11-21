@@ -364,6 +364,7 @@ MonoBehaviour:
   _playerCameraScript: {fileID: -7343000375826102715}
   _playerInteraction: {fileID: 8193252605129681427}
   PhysicsBody: {fileID: 0}
+  PlayerCanMove: 1
   PlayerName: 
   IsPlayerAlive: 1
 --- !u!114 &2063440617153998799
@@ -407,8 +408,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _playerScript: {fileID: 3375663572300106800}
-  RaycastPoint: {fileID: 8369005980057712562}
-  playerReach: 3
+  raycastPoint: {fileID: 8369005980057712562}
 --- !u!136 &-915324786735072532
 CapsuleCollider:
   m_ObjectHideFlags: 0
