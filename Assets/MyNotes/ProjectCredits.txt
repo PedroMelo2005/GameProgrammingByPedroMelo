@@ -1,0 +1,9 @@
+Links for assests used in this project:
+
+Longsword weapon: Made by: my instructor Noah Petrides
+Main menu background image: https://stock.adobe.com/ca/search?k=%22dungeon+background%22&asset_id=886004017
+Animated Chest: https://assetstore.unity.com/packages/3d/props/interior/animated-pbr-chest-demo-194755
+Other Weapons: https://assetstore.unity.com/packages/3d/props/weapons/fps-medieval-weapons-free-starter-pack-162884
+Cenario props: https://assetstore.unity.com/packages/3d/environments/fantasy/stylized-fantasy-armory-low-poly-3d-art-249203
+UI Sounds: https://assetstore.unity.com/packages/audio/sound-fx/modern-ui-sfx-sound-pack-198858 / Made by: Andrea Baroni of Cyberleaf Studio / Website: andreabaroni.com
+Soundtrack:
