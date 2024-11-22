@@ -6,17 +6,19 @@ public class SoundManager : MonoBehaviour {
     public enum Sound {
         OnClick1_SFX,
         OnClick2_SFX,
+        OnClose_SFX,
         OnMouseOver1_SFX,
-        OnMouseOver2_SFX
+        OnMouseOver2_SFX,
+        PlayerAttack_SFX,
+        EnemyAttack_SFX,
+        Consumable_SFX,
+        OpenChest_SFX,
+        KillEnemy_SFX,
+        SolvePuzzle_SFX,
+        WinGame_SFX,
+        LoseGame_SFX,
+        Soundtrack_Music
     }
-
-    /*
-    public void PlaySound(AudioClip clip) {
-        if (clip != null && audioSource != null) {
-            audioSource.PlayOneShot(clip);
-        }
-    }
-    */
 
     public void PlaySound(Sound sound) {
         GameObject soundGameObject = new GameObject("Sound");
