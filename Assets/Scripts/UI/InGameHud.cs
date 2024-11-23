@@ -13,7 +13,7 @@ public class InGameHud : MonoBehaviour {
 
     // Start is called before the first frame update
     void Start() {
-        Timer.text = "Timer Paused";
+        HealthBar.fillAmount = Player._maxPlayerLife;
     }
 
     // Update is called once per frame
@@ -21,21 +21,6 @@ public class InGameHud : MonoBehaviour {
         _timer += Time.deltaTime;
         Timer.text = $"Time played: {_timer, 0:0.00}";
         OnHealthChange(); // Just testing
-    }
-
-    // Set some things when this function is called
-    public void OnStartGame() {
-        HealthBar.fillAmount = Player._maxPlayerLife;
-        ActivateInGameHud();
-    }
-
-    // Make this gameObject be active in the scene
-    public void ActivateInGameHud() {
-        gameObject.SetActive(true);
-    }
-
-    public void DeactivateInGameHud() {
-        gameObject.SetActive(false);
     }
 
     public void OnHealthChange() { // Maybe just testing ?

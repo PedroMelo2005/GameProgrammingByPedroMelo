@@ -9138,12 +9138,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a21b9d259f18154488d896c8eb82ab3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GameManagerPrefab: {fileID: 6298906126546345028, guid: 39510d638445b3a4e8043872a85a571e, type: 3}
   _inGameHud: {fileID: 9082350511341940166}
   _pauseMenu: {fileID: 340479970827454309}
   interactionText: {fileID: 1758969058493635602}
   _inventoryMenu: {fileID: 1719601792616369846}
   IsInventoryMenuOpen: 0
+  menusLayoutArray:
+  - menusObject: {fileID: 652054036642372155}
+    menus: 0
+  - menusObject: {fileID: 480607730550356703}
+    menus: 1
+  - menusObject: {fileID: 1719601792616369846}
+    menus: 2
 --- !u!1 &8325570991904814977
 GameObject:
   m_ObjectHideFlags: 0

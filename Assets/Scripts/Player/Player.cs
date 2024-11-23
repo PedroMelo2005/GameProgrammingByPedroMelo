@@ -5,8 +5,9 @@ using Unity.VisualScripting;
 using UnityEngine;
 
 public class Player : MonoBehaviour {
-    [SerializeField] private PlayerMovement _playerMovementScript;
-    [SerializeField] private PlayerCamera _playerCameraScript;
+    [SerializeField] private PlayerInputs _playerInputs;
+    [SerializeField] private PlayerMovement _playerMovement;
+    [SerializeField] private PlayerCamera _playerCamera;
     [SerializeField] private PlayerInteraction _playerInteraction;
     public Rigidbody PhysicsBody;
 
