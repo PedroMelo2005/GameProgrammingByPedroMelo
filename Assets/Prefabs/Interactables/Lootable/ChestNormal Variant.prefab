@@ -17,6 +17,26 @@ PrefabInstance:
       value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 294418407561966359, guid: fe65113e8abe8b04a8365a0236605b09, type: 3}
+      propertyPath: 'frequencyCount.Array.data[0]'
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 294418407561966359, guid: fe65113e8abe8b04a8365a0236605b09, type: 3}
+      propertyPath: 'frequencyCount.Array.data[1]'
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 294418407561966359, guid: fe65113e8abe8b04a8365a0236605b09, type: 3}
+      propertyPath: 'frequencyCount.Array.data[2]'
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 294418407561966359, guid: fe65113e8abe8b04a8365a0236605b09, type: 3}
+      propertyPath: 'frequencyCount.Array.data[3]'
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 294418407561966359, guid: fe65113e8abe8b04a8365a0236605b09, type: 3}
+      propertyPath: 'frequencyCount.Array.data[4]'
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 294418407561966359, guid: fe65113e8abe8b04a8365a0236605b09, type: 3}
       propertyPath: 'maxFrequencyCount.Array.data[0]'
       value: 1
       objectReference: {fileID: 0}

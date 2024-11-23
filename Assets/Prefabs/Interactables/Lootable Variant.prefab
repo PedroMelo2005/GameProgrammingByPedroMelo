@@ -58,7 +58,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2581113385045990107, guid: 33c3297602617b043abf190c0fe3e135, type: 3}
       propertyPath: m_TagString
-      value: Lootable
+      value: Interactable
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

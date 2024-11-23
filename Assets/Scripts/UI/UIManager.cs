@@ -8,9 +8,11 @@ using TMPro;
 using static SoundManager;
 
 public class UIManager : MonoBehaviour {
+    [SerializeField] private TMP_Text interactionText;
     [SerializeField] private InGameHud _inGameHud;
     [SerializeField] private PauseMenu _pauseMenu;
-    [SerializeField] private TMP_Text interactionText;
+    private GameManager gameManager;
+    private PlayerManager playerManager;
 
     public static UIManager Instance; // Global static instance
 
@@ -20,11 +22,11 @@ public class UIManager : MonoBehaviour {
     private bool _isCombatMenuOpen;
     private bool _isPuzzleMenuOpen;
 
-    public bool IsInGameHudOpen { get { return _isInGameHudOpen; } }
-    public bool IsPauseMenuOpen { get { return _isPauseMenuOpen; } }
-    public bool IsInventoryMenuOpen { get { return _isInventoryMenuOpen; } }
-    public bool IsCombatMenuOpen { get { return _isCombatMenuOpen; } }
-    public bool IsPuzzleMenuOpen { get { return _isPuzzleMenuOpen; } }
+    public bool IsInGameHudOpen => _isInGameHudOpen;
+    public bool IsPauseMenuOpen => _isPauseMenuOpen;
+    public bool IsInventoryMenuOpen => _isInventoryMenuOpen;
+    public bool IsCombatMenuOpen => _isCombatMenuOpen;
+    public bool IsPuzzleMenuOpen => _isPuzzleMenuOpen;
 
     [SerializeField] private MenusLayout[] menusLayoutArray;
 
@@ -48,12 +50,25 @@ public class UIManager : MonoBehaviour {
 
     // Start is called before the first frame update
     void Start() {
-        SetStartGame();
+
     }
 
     // Update is called once per frame
     void Update() {
 
+    }
+
+    public void SetUpUiManager(GameManager gameManager, PlayerManager playerManager) {
+        this.gameManager = gameManager;
+        this.playerManager = playerManager;
+        _inGameHud.SetUp(this);
+        _pauseMenu.SetUp(this);
+    }
+
+    public void OnStartGame() {
+        ShowInGameHud();
+        HidePauseMenu();
+        HideInventoryMenu();
     }
 
     public void SetMenuLayout(Menus menus, bool setState) {
@@ -89,12 +104,6 @@ public class UIManager : MonoBehaviour {
         }
         Debug.LogError("Menu" + menus + " not found!");
         return null;
-    }
-
-    public void SetStartGame() {
-        ShowInGameHud();
-        HidePauseMenu();
-        HideInventoryMenu();
     }
 
     public void EnableInteractionText(string text) {

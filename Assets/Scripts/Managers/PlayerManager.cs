@@ -7,16 +7,19 @@ public class PlayerManager : MonoBehaviour {
 
     // Create Instances
     public Player player;
-    public MapManager mapManager;
-    public ItemManager itemManager;
-    public EnemyManager enemyManager;
+    private GameManager gameManager;
+    private MapManager mapManager;
+    private ItemManager itemManager;
+    private EnemyManager enemyManager;
 
-    public void SetUpPlayerManager(MapManager mapManager, ItemManager itemManager, EnemyManager enemyManager) {
+    public void SetUpPlayerManager(GameManager gameManager, MapManager mapManager, ItemManager itemManager, EnemyManager enemyManager) {
         Debug.Log("SetUp the \"PlayerManager\"");
-        player = Instantiate(playerPrefab, transform);
-        player.SetUpPlayer(mapManager, itemManager, enemyManager);
+        this.gameManager = gameManager;
         this.mapManager = mapManager;
+        this.itemManager = itemManager;
         this.enemyManager = enemyManager;
+        player = Instantiate(playerPrefab, transform);
+        player.SetUpPlayer(gameManager, mapManager, itemManager, enemyManager);
     }
 
     public void SpawnPlayer() {

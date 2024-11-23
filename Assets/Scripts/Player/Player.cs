@@ -13,9 +13,11 @@ public class Player : MonoBehaviour {
 
     // Create Instances
     public static Player Instance; // Global Static "instance" of type "Player"
-    MapManager mapManager;
-    ItemManager itemManager;
-    EnemyManager enemyManager;
+
+    private GameManager gameManager;
+    private MapManager mapManager;
+    private ItemManager itemManager;
+    private EnemyManager enemyManager;
 
     public string PlayerName = "";
     public const float _maxPlayerLife = 50f;
@@ -28,10 +30,11 @@ public class Player : MonoBehaviour {
         Instance = this;
     }
 
-    public void SetUpPlayer(MapManager mapManager, ItemManager itemManager, EnemyManager enemyManager) {
+    public void SetUpPlayer(GameManager gameManager, MapManager mapManager, ItemManager itemManager, EnemyManager enemyManager) {
         Debug.Log("SetUp the \"Player\"");
         // Call function ResetPlayerStats
         ResetPlayerStats();
+        this.gameManager = gameManager;
         this.mapManager = mapManager;
         this.itemManager = itemManager;
         this.enemyManager = enemyManager;

@@ -9,6 +9,11 @@ public class MapManager : MonoBehaviour {
     [SerializeField] RoomBase treasureRoomPrefab;
     [SerializeField] RoomBase puzzleRoomPrefab;
 
+    private GameManager _gameManager;
+    private PlayerManager _playerManager;
+    private ItemManager _itemManager;
+    private EnemyManager _enemyManager;
+
     public const int MapSize = 5; // size of the map
     public const int RoomSize = 10; // size of the rooms prefab
     public const float StartingLocation = (((MapSize - 1) * RoomSize) / 2); // Location at the center of the map
@@ -19,8 +24,12 @@ public class MapManager : MonoBehaviour {
     // Create a List "roomList" of type GameObject
     List<RoomBase> roomList;
 
-    public void SetUpMapManager(PlayerManager playerManager, ItemManager itemManager, EnemyManager enemyManager) {
+    public void SetUpMapManager(GameManager _gameManager, PlayerManager _playerManager, ItemManager _itemManager, EnemyManager _enemyManager) {
         Debug.Log("SetUp the \"MapManager\""); // DEBUG
+        this._gameManager = _gameManager;
+        this._playerManager = _playerManager;
+        this._itemManager = _itemManager;
+        this._enemyManager = _enemyManager;
         // Initialize the "roomList"
         Debug.Log("Initialize the \"roomList\""); // DEBUG
         roomList = new List<RoomBase> { combatRoomPrefab, treasureRoomPrefab, puzzleRoomPrefab };

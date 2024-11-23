@@ -5,7 +5,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class PauseMenu : MonoBehaviour {
-    [SerializeField] private UIManager uiManager;
+    private UIManager uiManager;
 
     // Start is called before the first frame update
     void Start() {
@@ -15,6 +15,10 @@ public class PauseMenu : MonoBehaviour {
     // Update is called once per frame
     void Update() {
 
+    }
+
+    public void SetUp(UIManager uiManager) {
+        this.uiManager = uiManager;
     }
 
     // Set ContinueGame actions

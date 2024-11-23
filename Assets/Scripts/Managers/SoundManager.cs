@@ -27,7 +27,9 @@ public class SoundManager : MonoBehaviour {
     }
 
     private static AudioClip GetAudioClip(Sound sound) {
+
         foreach (GameAssets.SoundAudioClip soundAudioClip in GameAssets.I.soundAudioClipArray) {
+
             if (soundAudioClip.sound == sound) {
                 return soundAudioClip.audioClip;
             }

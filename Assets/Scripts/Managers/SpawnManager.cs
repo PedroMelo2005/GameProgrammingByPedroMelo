@@ -4,6 +4,9 @@ using UnityEngine;
 using UnityEngine.UIElements;
 
 public class SpawnManager : MonoBehaviour {
+    private GameManager gameManager;
+    private MapManager mapManager;
+
     private int[] ratio = new int[System.Enum.GetValues(typeof(Item.Frequency)).Length];
     [SerializeField] public List<LootData> lootDataList = new List<LootData>();
     [SerializeField] public List<Item> itemList = new List<Item>();
@@ -14,7 +17,12 @@ public class SpawnManager : MonoBehaviour {
     List<Item> itemListFrequency50 = new List<Item>();
     List<List<Item>> itemListFrequency = new List<List<Item>>(System.Enum.GetValues(typeof(Item.Frequency)).Length);
 
-    public void SetUp(MapManager mapManager) {
+    public void SetUpSpawnManager(GameManager gameManager, MapManager mapManager) {
+        this.gameManager = gameManager;
+        this.mapManager = mapManager;
+    }
+
+    public void OnStartGame() {
 
         foreach (RoomBase room in mapManager.Rooms.Values) {
 

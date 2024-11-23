@@ -3,8 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class TreasureRoom : RoomBase {
-    [SerializeField] private LootData chest;
-    public LootData Chest => chest;
+    [SerializeField] private LootData _chest;
+    public LootData Chest => _chest;
 
     int timesSearched = 0;
     public override string roomName { get; } = "Treasure Room";
