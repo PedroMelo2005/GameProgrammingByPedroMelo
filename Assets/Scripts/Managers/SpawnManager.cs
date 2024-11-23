@@ -23,13 +23,18 @@ public class SpawnManager : MonoBehaviour {
     }
 
     public void OnStartGame() {
+        foreach (LootData lootData in TreasureRoom.ContainersList) {
+            lootDataList.Add(lootData);
+        }
 
+        /*
         foreach (RoomBase room in mapManager.Rooms.Values) {
 
             if (room is TreasureRoom lootRoom) {
                 lootDataList.Add(lootRoom.Chest);
             }
         }
+        */
 
         GetRatio();
         DivideList();
@@ -51,8 +56,8 @@ public class SpawnManager : MonoBehaviour {
         foreach (LootData lootData in lootDataList) {
             int frequencyCount = lootData.frequencyCount.Length;
 
-             // [0] = 1%, [1] = 5%, [2] = 10%, [3] = 25%, [4] = 50%
-             // Moving in probability
+            // [0] = 1%, [1] = 5%, [2] = 10%, [3] = 25%, [4] = 50%
+            // Moving in probability
             for (int i = 0; i < frequencyCount; i++) {
 
                 // Moving in probability count
@@ -69,7 +74,7 @@ public class SpawnManager : MonoBehaviour {
             }
         }
     }
-    
+
     private void DivideList() {
         itemListFrequency.Add(itemListFrequency1);
         itemListFrequency.Add(itemListFrequency5);
@@ -116,8 +121,8 @@ public class SpawnManager : MonoBehaviour {
         Vector2Int itemSize = itemData.item.slotSize;
 
         // Moving in rows
-        for (int i = 0; i < row; i ++) {
-            
+        for (int i = 0; i < row; i++) {
+
             // Moving in columns
             for (int j = 0; j < column; j++) {
 
