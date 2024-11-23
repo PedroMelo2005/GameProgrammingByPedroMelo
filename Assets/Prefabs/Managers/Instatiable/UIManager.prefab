@@ -426,7 +426,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 94be0cce6d16e1342a0684fdc01c7f09, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  uiManager: {fileID: 7487451114914673348}
 --- !u!1 &494748335247569433
 GameObject:
   m_ObjectHideFlags: 0
@@ -5778,6 +5777,7 @@ MonoBehaviour:
   type: 0
   size: {x: 0, y: 0}
   itemObjectList: []
+  itemDataList: []
   slotParent: {fileID: 1591026266904792056}
   itemParent: {fileID: 8436921255483767872}
 --- !u!114 &8562118924886669887
@@ -5795,6 +5795,7 @@ MonoBehaviour:
   type: 1
   size: {x: 0, y: 0}
   itemObjectList: []
+  itemDataList: []
   slotParent: {fileID: 648259741987194583}
   itemParent: {fileID: 2747562870165477216}
 --- !u!114 &3027137163427282061
@@ -5812,6 +5813,7 @@ MonoBehaviour:
   type: 2
   size: {x: 0, y: 0}
   itemObjectList: []
+  itemDataList: []
   slotParent: {fileID: 2130329209039747544}
   itemParent: {fileID: 2104001862588110914}
 --- !u!1 &5604000981907693315
@@ -9137,9 +9139,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a21b9d259f18154488d896c8eb82ab3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  interactionText: {fileID: 1758969058493635602}
   _inGameHud: {fileID: 9082350511341940166}
   _pauseMenu: {fileID: 340479970827454309}
-  interactionText: {fileID: 1758969058493635602}
   menusLayoutArray:
   - menusObject: {fileID: 652054036642372155}
     menus: 0

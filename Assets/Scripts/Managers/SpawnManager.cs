@@ -111,7 +111,6 @@ public class SpawnManager : MonoBehaviour {
 
     private void SearchEmptyPlaceInMatrix(LootData lootData, ItemData itemData) {
         itemData.myLootContainer = lootData.transform.gameObject;
-
         int row = lootData.matrix.GetLength(0);
         int column = lootData.matrix.GetLength(1);
         Vector2Int itemSize = itemData.item.slotSize;

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using System;
 
-[SerializeField]
+[Serializable]
 public class ItemData {
     public Item item;
     public bool isRotated = false;
@@ -12,5 +12,4 @@ public class ItemData {
     public InventoryPanel.Type slotPanelType;
     public GameObject myLootContainer;
     public int myLootContainerId;
-
 }

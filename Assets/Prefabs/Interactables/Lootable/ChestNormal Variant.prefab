@@ -37,6 +37,10 @@ PrefabInstance:
       value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 294418407561966359, guid: fe65113e8abe8b04a8365a0236605b09, type: 3}
+      propertyPath: maxFrequencyCount.Array.size
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 294418407561966359, guid: fe65113e8abe8b04a8365a0236605b09, type: 3}
       propertyPath: 'maxFrequencyCount.Array.data[0]'
       value: 1
       objectReference: {fileID: 0}
@@ -54,6 +58,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 294418407561966359, guid: fe65113e8abe8b04a8365a0236605b09, type: 3}
       propertyPath: 'maxFrequencyCount.Array.data[4]'
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 294418407561966359, guid: fe65113e8abe8b04a8365a0236605b09, type: 3}
+      propertyPath: 'maxFrequencyCount.Array.data[5]'
       value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 1192631243439715351, guid: fe65113e8abe8b04a8365a0236605b09, type: 3}
