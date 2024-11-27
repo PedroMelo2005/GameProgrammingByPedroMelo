@@ -60,6 +60,17 @@ public class MapManager : MonoBehaviour {
 
             roomByCoordinate.Value.SetRooms(northRoom, eastRoom, southRoom, westRoom);
         }
+
+        /*
+        // For Create the Chests of the TreasureRoom
+        foreach (RoomBase room in _rooms.Values) {
+
+            if (room is TreasureRoom lootRoom) {
+                Debug.Log("Starting InstantiateContainers");
+                lootRoom.InstantiateContainers();
+            }
+        }
+        */
     }
 
     private RoomBase FindRoom(Vector2 currentRoom, Direction direction) {

@@ -23,18 +23,21 @@ public class SpawnManager : MonoBehaviour {
     }
 
     public void OnStartGame() {
+        /*
+        // For add to the "lootDataList" all the containers in the "ContainerList"
+        Debug.Log("ContainerList" + TreasureRoom.ContainersList + TreasureRoom.ContainersList.Count);
         foreach (LootData lootData in TreasureRoom.ContainersList) {
+            Debug.Log("ContainerList" + TreasureRoom.ContainersList + TreasureRoom.ContainersList.Count);
             lootDataList.Add(lootData);
         }
+        */
 
-        /*
         foreach (RoomBase room in mapManager.Rooms.Values) {
 
             if (room is TreasureRoom lootRoom) {
                 lootDataList.Add(lootRoom.Chest);
             }
         }
-        */
 
         GetRatio();
         DivideList();
@@ -51,7 +54,7 @@ public class SpawnManager : MonoBehaviour {
     }
 
     public void Spawn() {
-
+        Debug.Log("Spawning items: " + lootDataList); // DEBUG
         // Moving in containers
         foreach (LootData lootData in lootDataList) {
             int frequencyCount = lootData.frequencyCount.Length;
@@ -69,6 +72,7 @@ public class SpawnManager : MonoBehaviour {
                         newItemData.item = itemListFrequency[i][random];
                         newItemData.slotPanelType = InventoryPanel.Type.Loot;
                         SearchEmptyPlaceInMatrix(lootData, newItemData);
+                        Debug.Log("Spawned: " + newItemData.item); // DEBUG
                     }
                 }
             }

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public class PlayerInputs : MonoBehaviour {
     [SerializeField] private Player _player;
@@ -14,6 +15,8 @@ public class PlayerInputs : MonoBehaviour {
         CheckPauseMenu();
         // Call the function "CheckInventoryMenu()"
         CheckInventoryMenu();
+        // Call the function "CheckInventoryRotateItem()"
+        CheckInventoryRotateItem();
     }
 
     // CheckPauseMenu
@@ -39,6 +42,19 @@ public class PlayerInputs : MonoBehaviour {
 
             // Check if the player pressed the keyboard key "Tab" and call the respective function
             if (Input.GetKeyDown(KeyCode.Tab)) {
+                UIManager.Instance.TurnCanvasInventory();
+                UIManager.Instance.SetActiveLootPanel(false);
+            }
+        }
+    }
+
+    /*
+    // OldCheckInventoryMenu
+    private void OldCheckInventoryMenu() {
+        if (UIManager.Instance.IsPauseMenuOpen == false) {
+
+            // Check if the player pressed the keyboard key "Tab" and call the respective function
+            if (Input.GetKeyDown(KeyCode.Tab)) {
 
                 if (UIManager.Instance.IsInventoryMenuOpen == true) {
                     UIManager.Instance.HideInventoryMenu();
@@ -49,6 +65,16 @@ public class PlayerInputs : MonoBehaviour {
                 else {
                     Debug.LogError("Error when CheckInventoryMenu");
                 }
+            }
+        }
+    }
+    */
+
+    // CheckInventoryRotateItem
+    private void CheckInventoryRotateItem() {
+        if (UIManager.Instance.IsInventoryMenuOpen == true) {
+            if (Input.GetKeyDown(KeyCode.R)) {
+
             }
         }
     }

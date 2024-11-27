@@ -3,18 +3,18 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class TreasureRoom : RoomBase {
+    [SerializeField] private LootData _chest;
+    public LootData Chest => _chest;
+
+    /*
     [SerializeField] private LootData[] _containers;
     private LootData _chest;
     public LootData Chest => _chest;
-
-    public static readonly List<LootData> ContainersList = new List<LootData>();
+    public static List<LootData> ContainersList = new List<LootData>();
+    */
 
     int timesSearched = 0;
     public override string roomName { get; } = "Treasure Room";
-
-    void Start() {
-        InstantiateContainers();
-    }
 
     public override void OnTriggerEnter(Collider other) {
         if (other.CompareTag("Player")) {
@@ -38,11 +38,15 @@ public class TreasureRoom : RoomBase {
         }
     }
 
-    private void InstantiateContainers() {
-        var newContainer = _containers[Random.Range(0, _containers.Length)];
-        _chest = Instantiate(newContainer, transform);
+    /*
+    // For Spawn and and to the list all the chests
+    public void InstantiateContainers() {
+        var randomContainer = _containers[Random.Range(0, _containers.Length)];
+        var newContainer = randomContainer;
+        _chest = Instantiate(randomContainer, transform);
         _chest.transform.localPosition = new Vector3(0, 1, 0);
-        ContainersList.Add(_chest);
+        ContainersList.Add(randomContainer);
     }
+    */
 
 }
