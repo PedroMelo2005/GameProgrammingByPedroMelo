@@ -320,6 +320,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7697291737744169858}
   - component: {fileID: 3375663572300106800}
+  - component: {fileID: 1216623650870979686}
   - component: {fileID: 2063440617153998799}
   - component: {fileID: -7343000375826102715}
   - component: {fileID: 8193252605129681427}
@@ -360,13 +361,28 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 20a9fdbbb3a9b4344878a73a10d909b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _playerMovementScript: {fileID: 2063440617153998799}
-  _playerCameraScript: {fileID: -7343000375826102715}
+  _playerInputs: {fileID: 1216623650870979686}
+  _playerMovement: {fileID: 2063440617153998799}
+  _playerCamera: {fileID: -7343000375826102715}
   _playerInteraction: {fileID: 8193252605129681427}
   PhysicsBody: {fileID: 0}
-  PlayerCanMove: 1
   PlayerName: 
+  PlayerLife: 50
   IsPlayerAlive: 1
+  PlayerCanMove: 1
+--- !u!114 &1216623650870979686
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3016109537065809452}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2ad18d4a8cf3e1f40a448e906405b3b1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _player: {fileID: 3375663572300106800}
 --- !u!114 &2063440617153998799
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -379,7 +395,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c9905dbb499d9b5449e4ba9c18f8f04f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _playerScript: {fileID: 3375663572300106800}
+  _player: {fileID: 3375663572300106800}
   moveSpeed: 4
 --- !u!114 &-7343000375826102715
 MonoBehaviour:
@@ -393,7 +409,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 085cda2e7c95df74197986b82be0b378, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _playerScript: {fileID: 3375663572300106800}
+  _player: {fileID: 3375663572300106800}
   playerHead: {fileID: 5122758945239510413}
 --- !u!114 &8193252605129681427
 MonoBehaviour:

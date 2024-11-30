@@ -47,8 +47,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 54d172feefc5ada43b0d3e3af6f4fbfa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inventoryPrefab: {fileID: 0}
-  spritesItem: []
+  slotPrefab: {fileID: 8528368986462788400, guid: 6a8e8ff74977fff43a5b6d872aaf2804, type: 3}
+  slotParentBackpack: {fileID: 0}
+  slotParentLoot: {fileID: 0}
+  ItemParentCharacter: {fileID: 0}
+  ItemParentBackpack: {fileID: 0}
+  ItemParentLoot: {fileID: 0}
+  item1x1: {fileID: 862650163716143711, guid: 78df6e8bc27cd2b4eadae66ff0b61819, type: 3}
+  item1x2: {fileID: 5966292521059647387, guid: aaad588774e96604bacf89fb7165d413, type: 3}
+  item1x3: {fileID: 2923106810703635647, guid: 1ea8b365f2343214cbfc61e5c84b113e, type: 3}
+  item1x4: {fileID: 6313536329722543170, guid: 871bd32313170b144a19457e9bd3c122, type: 3}
+  item1x5: {fileID: 5704141195792704294, guid: bf39d6a78dfadf04b9b7633ffbd08b99, type: 3}
+  item2x2: {fileID: 4206735687495118181, guid: 4af73808abf2aa04892bec21a854b10a, type: 3}
+  isDraggingItem: 0
+  draggingItem: {fileID: 0}
+  draggingItemSmoothFactor: 10
+  draggingItemParent: {fileID: 0}
+  agree: {r: 0, g: 0, b: 0, a: 0}
+  disagree: {r: 0, g: 0, b: 0, a: 0}
+  panelList: []
+  isLockedUI: 0
 --- !u!114 &759324279402810933
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -64,6 +82,7 @@ MonoBehaviour:
   type: 0
   size: {x: 0, y: 0}
   itemObjectList: []
+  itemDataList: []
   slotParent: {fileID: 0}
   itemParent: {fileID: 0}
 --- !u!114 &3623066240011126213
@@ -81,6 +100,7 @@ MonoBehaviour:
   type: 1
   size: {x: 0, y: 0}
   itemObjectList: []
+  itemDataList: []
   slotParent: {fileID: 0}
   itemParent: {fileID: 0}
 --- !u!114 &7969114553292243831
@@ -98,5 +118,6 @@ MonoBehaviour:
   type: 2
   size: {x: 0, y: 0}
   itemObjectList: []
+  itemDataList: []
   slotParent: {fileID: 0}
   itemParent: {fileID: 0}

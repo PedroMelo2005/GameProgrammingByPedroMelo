@@ -9,6 +9,13 @@ public class MapManager : MonoBehaviour {
     [SerializeField] RoomBase treasureRoomPrefab;
     [SerializeField] RoomBase puzzleRoomPrefab;
 
+    private GameManager _gameManager;
+    private PlayerManager _playerManager;
+    private ItemManager _itemManager;
+    private EnemyManager _enemyManager;
+
+    public static MapManager Instance; // Global static instance
+
     public const int MapSize = 5; // size of the map
     public const int RoomSize = 10; // size of the rooms prefab
     public const float StartingLocation = (((MapSize - 1) * RoomSize) / 2); // Location at the center of the map
@@ -16,14 +23,12 @@ public class MapManager : MonoBehaviour {
     readonly Dictionary<Vector2, RoomBase> _rooms = new();
     public Dictionary<Vector2, RoomBase> Rooms => _rooms;
 
-    // Create a List "roomList" of type GameObject
-    List<RoomBase> roomList;
-
-    public void SetUpMapManager(PlayerManager playerManager, ItemManager itemManager, EnemyManager enemyManager) {
+    public void SetUpMapManager(GameManager _gameManager, PlayerManager _playerManager, ItemManager _itemManager, EnemyManager _enemyManager) {
         Debug.Log("SetUp the \"MapManager\""); // DEBUG
-        // Initialize the "roomList"
-        Debug.Log("Initialize the \"roomList\""); // DEBUG
-        roomList = new List<RoomBase> { combatRoomPrefab, treasureRoomPrefab, puzzleRoomPrefab };
+        this._gameManager = _gameManager;
+        this._playerManager = _playerManager;
+        this._itemManager = _itemManager;
+        this._enemyManager = _enemyManager;
     }
 
     public void CreateMap() {
@@ -55,6 +60,17 @@ public class MapManager : MonoBehaviour {
 
             roomByCoordinate.Value.SetRooms(northRoom, eastRoom, southRoom, westRoom);
         }
+
+        /*
+        // For Create the Chests of the TreasureRoom
+        foreach (RoomBase room in _rooms.Values) {
+
+            if (room is TreasureRoom lootRoom) {
+                Debug.Log("Starting InstantiateContainers");
+                lootRoom.InstantiateContainers();
+            }
+        }
+        */
     }
 
     private RoomBase FindRoom(Vector2 currentRoom, Direction direction) {
@@ -85,45 +101,6 @@ public class MapManager : MonoBehaviour {
         }
 
         return room;
-    }
-
-    public void OldCreateMap() {
-        // midPoint represents the center of the grid
-        int midPoint = (MapSize - 1) / 2;
-
-        Debug.Log("Starting loop to CreateMap"); // DEBUG
-        // Run the code while the variable "x" is less than the "MapSize"
-        for (int x = 0; x < MapSize; x++) {
-            // Run the code while the variable "z" is less than the "MapSize"
-            for (int z = 0; z < MapSize; z++) {
-
-                // Create a variable "coords" that will calculate the coordinates X and Y of the room
-                Vector2 coords = new Vector2(x * RoomSize, z * RoomSize);
-
-                // If is in on the center of the grid will run this code
-                if (x == midPoint && z == midPoint) {
-                    var startRoomInstance = Instantiate(welcomeRoomPrefab, transform);
-                    startRoomInstance.transform.position = new Vector3(coords.x, 0, coords.y);
-                }
-                // Others rooms that are not on the center of the grid
-                else {
-                    var randomRoomInstance = Instantiate(selectedRoomPrefab(), transform);
-                    randomRoomInstance.transform.position = new Vector3(coords.x, 0, coords.y);
-                }
-            }
-        }
-        Debug.Log("Ending loop to CreateMap"); // DEBUG
-    }
-
-    public void VisualizeMap() {
-        Debug.Log("Starting loop to VisualizeMap"); // DEBUG
-        for (int x = 0; x < MapSize; x++) {
-            for (int z = 0; z < MapSize; z++) {
-                GameObject mapRoomRepresentation = GameObject.CreatePrimitive(PrimitiveType.Cube);
-                mapRoomRepresentation.transform.position = new Vector3(x, 0, z);
-            }
-        }
-        Debug.Log("Ending loop to VisualizeMap"); // DEBUG
     }
 
     RoomBase selectedRoomPrefab() {

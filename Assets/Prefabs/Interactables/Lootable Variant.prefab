@@ -56,6 +56,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Lootable Variant
       objectReference: {fileID: 0}
+    - target: {fileID: 2581113385045990107, guid: 33c3297602617b043abf190c0fe3e135, type: 3}
+      propertyPath: m_TagString
+      value: Lootable
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -85,4 +89,5 @@ MonoBehaviour:
   size: {x: 0, y: 0}
   frequencyCount: 0000000000000000000000000000000000000000
   maxFrequencyCount: 0000000000000000000000000000000000000000
+  itemList: []
   isFull: 0

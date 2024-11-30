@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerCamera : MonoBehaviour {
-    [SerializeField] private Player _playerScript;
+    [SerializeField] private Player _player;
     [SerializeField] private Transform playerHead;
 
     private float mouseSensibility = 140f;
@@ -12,7 +12,7 @@ public class PlayerCamera : MonoBehaviour {
 
     // Start is called before the first frame update
     void Start() {
-        _playerScript.DeactivateCursor();
+        _player.DeactivateCursor();
     }
 
     // Update is called once per frame
@@ -30,7 +30,7 @@ public class PlayerCamera : MonoBehaviour {
             // Make the camera look up and down locally
             playerHead.localRotation = Quaternion.Euler(verticalFacing, 0f, 0f);
             // Apply the horizontal rotation to the entire player body
-            _playerScript.PhysicsBody.rotation = Quaternion.Euler(0f, horizontalFacing, 0f);
+            _player.PhysicsBody.rotation = Quaternion.Euler(0f, horizontalFacing, 0f);
         }
     }
 

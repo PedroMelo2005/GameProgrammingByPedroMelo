@@ -1,14 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class PauseMenu : MonoBehaviour {
-    [SerializeField] private UIManager UiSystem;
-    [SerializeField] private InGameHud _inGameHud;
+    private UIManager uiManager;
 
     // Start is called before the first frame update
-    // Make this gameObject don't be active in the scene
     void Start() {
 
     }
@@ -18,45 +17,19 @@ public class PauseMenu : MonoBehaviour {
 
     }
 
-    public void OnStartGame() {
-        gameObject.SetActive(false);
-    }
-
-    // Set PauseGame actions
-    public void PauseGame() {
-        // Make this gameObject be active in the scene
-        gameObject.SetActive(true);
-        // Call function "DeactivateInGameHud()"
-        _inGameHud.DeactivateInGameHud();
-        // Freeze the time of the game
-        Time.timeScale = 0f;
-        // Assign the variable "IsPaused" to true
-        GameManager.IsGamePaused = true;
-        Player.Instance.ActivateCursor();
+    public void SetUp(UIManager uiManager) {
+        this.uiManager = uiManager;
     }
 
     // Set ContinueGame actions
     public void ButtonContinueGame() {
-        // Make this gameObject don't be active in the scene
-        gameObject.SetActive(false);
-        // Make this gameObject don't be active in the scene
-        gameObject.SetActive(false);
-        // Call function "ActivateInGameHud()"
-        _inGameHud.ActivateInGameHud();
-        // Unfreeze the time of the game
-        Time.timeScale = 1f;
-        // Assign the variable "IsPaused" to false
-        GameManager.IsGamePaused = false;
-        Player.Instance.DeactivateCursor();
+        UIManager.Instance.HidePauseMenu();
     }
 
     public void ButtonBackToMainMenu() {
         // Change the Scene of the game
         SceneManager.LoadScene(ConstVariables.MainMenuSceneName);
-        // Unfreeze the time of the game
-        Time.timeScale = 1f;
-        // Assign the variable "IsPaused" to false
-        GameManager.IsGamePaused = false;
+        GameManager.Instance.PauseGame(false);
         Player.Instance.ActivateCursor();
     }
 

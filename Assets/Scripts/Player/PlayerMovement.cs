@@ -3,15 +3,15 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour {
-    [SerializeField] private Player _playerScript;
+    [SerializeField] private Player _player;
 
     [SerializeField] private float moveSpeed = 4f;
 
     // Start is called before the first frame update
     void Start() {
-        _playerScript.PhysicsBody = GetComponent<Rigidbody>();
+        _player.PhysicsBody = GetComponent<Rigidbody>();
 
-        _playerScript.PhysicsBody.freezeRotation = true;
+        _player.PhysicsBody.freezeRotation = true;
     }
 
     // Update is called once per frame
@@ -38,7 +38,7 @@ public class PlayerMovement : MonoBehaviour {
             Vector3 velocity = moveDirection * moveSpeed;
 
             // Preserve Y axis velocity for gravity
-            _playerScript.PhysicsBody.velocity = new Vector3(velocity.x, _playerScript.PhysicsBody.velocity.y, velocity.z);
+            _player.PhysicsBody.velocity = new Vector3(velocity.x, _player.PhysicsBody.velocity.y, velocity.z);
         }
     }
 

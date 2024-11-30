@@ -3,75 +3,206 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Rendering.VirtualTexturing;
-using UnityEngine.SceneManagement;
 using TMPro;
+using UnityEngine.UI;
+using static SoundManager;
 
 public class UIManager : MonoBehaviour {
-    [SerializeField] private GameManager GameManagerPrefab;
+    [SerializeField] private TMP_Text _interactionText;
     [SerializeField] private InGameHud _inGameHud;
     [SerializeField] private PauseMenu _pauseMenu;
-    [SerializeField] private TMP_Text interactionText;
+    public CanvasGroup canvasGroupInventory;
+    public CanvasGroup canvasGroupMenu;
+    [SerializeField] GameObject lootPanel;
+    private GameManager gameManager;
+    private PlayerManager playerManager;
 
+    
+    private static UIManager instance;
     public static UIManager Instance;
-    private GameManager _gameManager;
 
-    [SerializeField] private GameObject _inventoryMenu; // Temporary until I create the InventoryMenu script
-    public bool IsInventoryMenuOpen = false;
+    private bool _isInGameHudOpen;
+    private bool _isPauseMenuOpen;
+    private bool _isInventoryMenuOpen;
+    private bool _isCombatMenuOpen;
+    private bool _isPuzzleMenuOpen;
 
-    public void Awake() {
+    public bool IsInGameHudOpen => _isInGameHudOpen;
+    public bool IsPauseMenuOpen => _isPauseMenuOpen;
+    public bool IsInventoryMenuOpen => _isInventoryMenuOpen;
+    public bool IsCombatMenuOpen => _isCombatMenuOpen;
+    public bool IsPuzzleMenuOpen => _isPuzzleMenuOpen;
+
+    public bool isLockedUI = false;
+
+    [SerializeField] private MenusLayout[] menusLayoutArray;
+
+    [System.Serializable]
+    public class MenusLayout {
+        public GameObject menusObject;
+        public Menus menus;
+    }
+
+    public enum Menus {
+        InGameHud,
+        PauseMenu,
+        InventoryMenu,
+        CombatMenu,
+        PuzzleMenu
+    }
+
+    void Awake() {
         Instance = this;
     }
 
     // Start is called before the first frame update
     void Start() {
-        SetStartGame();
+
     }
 
     // Update is called once per frame
     void Update() {
-        // Call the function "CheckPauseGameMenu()"
-        CheckPauseMenu();
-        // Call the function "CheckInventoryMenu()"
-        CheckInventoryMenu();
+
     }
 
-    public void SetStartGame() {
-        // Call functions "OnStartGame()"
-        _inGameHud.OnStartGame();
-        _pauseMenu.OnStartGame();
-        _inventoryMenu.SetActive(false); // Temporary until I create the InventoryMenu script
+    public void SetUpUiManager(GameManager gameManager, PlayerManager playerManager) {
+        this.gameManager = gameManager;
+        this.playerManager = playerManager;
+        _inGameHud.SetUp(this);
+        _pauseMenu.SetUp(this);
     }
 
-    // Check if the player pressed the keyboard key "Escape(Esc)" and call the respective function
-    public void CheckPauseMenu() {
-        if (Input.GetKeyDown(KeyCode.Escape)) {
-            if (GameManager.IsGamePaused == true) {
-                _pauseMenu.ButtonContinueGame();
+    public void OnStartGame() {
+        ShowInGameHud();
+        HidePauseMenu();
+        SetCanvasInventory(false);
+    }
+
+    public void SetMenuLayout(Menus menus, bool setState) {
+        GameObject menuLayout = GetMenuLayout(menus);
+
+        if (menuLayout != null) {
+            menuLayout.SetActive(setState);
+        }
+        else {
+            Debug.LogError("Error when SetMenuLayout");
+        }
+
+        /*
+        foreach (MenusLayout menusLayout in menusLayoutArray) {
+            GameObject otherMenuLayout = GetMenuLayout(menusLayout.menus);
+
+            if (otherMenuLayout != null) {
+                otherMenuLayout.SetActive(menusLayout.menus == menus);
             }
-            else if (GameManager.IsGamePaused == false) {
-                _pauseMenu.PauseGame();
+            else {
+                Debug.LogError("Error when SetMenuLayout");
             }
         }
+        */
+
+    }
+
+    private GameObject GetMenuLayout(Menus menus) {
+        foreach (MenusLayout menusLayout in menusLayoutArray) {
+            if (menusLayout.menus == menus) {
+                return menusLayout.menusObject;
+            }
+        }
+        Debug.LogError("Menu" + menus + " not found!");
+        return null;
     }
 
     public void EnableInteractionText(string text) {
-        interactionText.text = text + " (E)";
-        interactionText.gameObject.SetActive(true);
+        _interactionText.text = text + " (E)";
+        _interactionText.gameObject.SetActive(true);
     }
 
     public void DisableInteractionText() {
-        interactionText.gameObject.SetActive(false);
+        _interactionText.gameObject.SetActive(false);
     }
 
-    public void CheckInventoryMenu() {
-        if (Input.GetKeyDown(KeyCode.Tab) && IsInventoryMenuOpen == true) {
-            _inventoryMenu.SetActive(false);
-            IsInventoryMenuOpen = false;
+    public void SetCanvasInventory(bool value) {
+        if (value) {
+            canvasGroupInventory.alpha = 1;
+            canvasGroupInventory.interactable = true;
+            canvasGroupInventory.blocksRaycasts = true;
         }
-        else if (Input.GetKeyDown(KeyCode.Tab) && IsInventoryMenuOpen == false) {
-            _inventoryMenu.SetActive(true);
-            IsInventoryMenuOpen = true;
+        else {
+            canvasGroupInventory.alpha = 0;
+            canvasGroupInventory.interactable = false;
+            canvasGroupInventory.blocksRaycasts = false;
         }
+    }
+
+    public void TurnCanvasInventory() {
+        if (GetStatusOfCanvas(canvasGroupInventory)) {
+            canvasGroupInventory.alpha = 0;
+            canvasGroupInventory.interactable = false;
+            canvasGroupInventory.blocksRaycasts = false;
+        }
+        else {
+            canvasGroupInventory.alpha = 1;
+            canvasGroupInventory.interactable = true;
+            canvasGroupInventory.blocksRaycasts = true;
+        }
+    }
+
+    public bool GetStatusOfCanvas(CanvasGroup canvasGroup) {
+        if (canvasGroup.alpha == 1) {
+            return true;
+        }
+        else {
+            return false;
+        }
+    }
+
+    public void SetActiveLootPanel(bool value) {
+        lootPanel.SetActive(value);
+    }
+
+    // ShowInGameHud
+    public void ShowInGameHud() {
+        SetMenuLayout(Menus.InGameHud, true);
+        _isInGameHudOpen = true;
+    }
+
+    // ShowInGameHud
+    public void HideInGameHud() {
+        SetMenuLayout(Menus.InGameHud, false);
+        _isInGameHudOpen = false;
+    }
+
+    // ShowPauseMenu
+    public void ShowPauseMenu() {
+        SetMenuLayout(Menus.PauseMenu, true);
+        HideInGameHud();
+        GameManager.Instance.PauseGame(true);
+        Player.Instance.ActivateCursor();
+        _isPauseMenuOpen = true;
+    }
+
+    // HidePauseMenu
+    public void HidePauseMenu() {
+        SetMenuLayout(Menus.PauseMenu, false);
+        ShowInGameHud();
+        GameManager.Instance.PauseGame(false);
+        Player.Instance.DeactivateCursor();
+        _isPauseMenuOpen = false;
+    }
+
+    // ShowInventoryMenu
+    public void ShowInventoryMenu() {
+        SetMenuLayout(Menus.InventoryMenu, true);
+        Player.Instance.ActivateCursor();
+        _isInventoryMenuOpen = true;
+    }
+
+    // HideInventoryMenu
+    public void HideInventoryMenu() {
+        SetMenuLayout(Menus.InventoryMenu, false);
+        Player.Instance.DeactivateCursor();
+        _isInventoryMenuOpen = false;
     }
 
 }

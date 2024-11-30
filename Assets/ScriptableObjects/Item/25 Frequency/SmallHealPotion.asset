@@ -21,7 +21,7 @@ MonoBehaviour:
   slotType: 1
   frequency: 25
   slotSize: {x: 1, y: 1}
-  image: {fileID: 0}
+  image: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
   backgroundColor: {r: 0, g: 0.6509804, b: 1, a: 0}
   prefab: {fileID: 8539697262634021533, guid: c41343f567e102346849ba64b6b6a6ca, type: 3}
   heal: 25
