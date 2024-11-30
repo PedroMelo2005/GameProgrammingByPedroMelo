@@ -6,7 +6,7 @@ using UnityEngine.EventSystems;
 public class SlotData : MonoBehaviour, IDropHandler, IPointerEnterHandler {
     public Item.SlotType slotType;
     public Vector2Int matrixPosition;
-    public InventoryPanel.Type inventoryPanelType;
+    public InventoryPanel.Type panelType;
     public GameObject myLootContainer;
     public bool isFull = false; // For the character panel
 

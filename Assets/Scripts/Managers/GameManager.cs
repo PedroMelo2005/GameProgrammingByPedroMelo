@@ -63,12 +63,16 @@ public class GameManager : MonoBehaviour {
     private void OnGameStart() {
         // Call the function "PauseGame"
         PauseGame(false);
+        Debug.Log("starting create map"); // DEBUG
         // Call function CreateMap
         mapManager.CreateMap();
+        Debug.Log("starting spawn player"); // DEBUG
         //Call function SpawnPlayer
         playerManager.SpawnPlayer();
-        spawnManager.OnStartGame();
+        Debug.Log("Starting UIManager OnGameStart"); // DEBUG
         uiManager.OnStartGame();
+        Debug.Log("Starting SpawnManager OnGameStart"); // DEBUG
+        spawnManager.OnStartGame();
     }
 
     public void PauseGame(bool pauseState) {

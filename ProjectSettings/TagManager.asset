@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Interactable
   - Lootable
+  - Item
   layers:
   - Default
   - TransparentFX

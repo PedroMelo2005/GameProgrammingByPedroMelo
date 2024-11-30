@@ -21,7 +21,7 @@ MonoBehaviour:
   slotType: 0
   frequency: 1
   slotSize: {x: 1, y: 5}
-  image: {fileID: 0}
+  image: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
   backgroundColor: {r: 1, g: 0.97662324, b: 0, a: 0}
   prefab: {fileID: 1885606087641399498, guid: 5bffa2f0ecfb34d4b9cb4bc2b19bfa58, type: 3}
   damage: 30

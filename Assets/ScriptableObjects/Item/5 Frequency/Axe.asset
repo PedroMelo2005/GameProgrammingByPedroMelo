@@ -20,8 +20,8 @@ MonoBehaviour:
   itemType: 0
   slotType: 0
   frequency: 5
-  slotSize: {x: 2, y: 4}
-  image: {fileID: 0}
+  slotSize: {x: 1, y: 3}
+  image: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
   backgroundColor: {r: 0.99260664, g: 0, b: 1, a: 0}
   prefab: {fileID: 5573038787750839229, guid: 4250efa7b817c1544b64791f225801b5, type: 3}
   damage: 20

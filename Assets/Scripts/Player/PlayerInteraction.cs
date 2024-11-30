@@ -12,19 +12,55 @@ public class PlayerInteraction : MonoBehaviour {
 
     // Update is called once per frame
     void Update() {
+        // Call function "CheckInteractionText"
+        CheckInteractionText();
         // Call function "CheckInteraction"
         CheckInteraction();
 
+        /*
         if (Player.Instance.PlayerCanMove) {
             // Check if player press keyboard key "E"
             if (Input.GetKeyDown(KeyCode.E) && currentInteractable != null) {
                 currentInteractable.Interact();
             }
         }
+        */
+    }
+
+    private void CheckInteraction() {
+        if (Player.Instance.PlayerCanMove) {
+            if (Input.GetKeyDown(KeyCode.E)) {
+                RaycastHit hit;
+                Ray ray = new Ray(raycastPoint.transform.position, raycastPoint.transform.forward);
+
+                // Check if colliders with anything within player reach
+                if (Physics.Raycast(ray, out hit, playerReach)) {
+
+                    // Check if is looking at an interactable object
+                    if (hit.collider.GetComponent<Interactable>() != null) {
+                        Interactable newInteractable = hit.collider.GetComponent<Interactable>();
+                        Debug.Log(hit.collider); // DEBUG
+
+                        if (hit.transform.CompareTag("Item")) {
+                            //
+                        }
+                        else if (hit.collider.CompareTag("Lootable")) {
+                            StartCoroutine(InventoryManager.Instance.CreatePanel(InventoryManager.Instance.GetPanel(InventoryPanel.Type.Loot), hit.transform.parent.GetComponent<LootData>()));
+                            UIManager.Instance.SetActiveLootPanel(true);
+                            UIManager.Instance.SetCanvasInventory(true);
+                            currentInteractable.Interact();
+                        }
+                        else if (hit.collider.tag == "Interactable") {
+                            currentInteractable.Interact();
+                        }
+                    }
+                }
+            }
+        }
     }
 
     // Check if the player is interacting with an interactable object
-    private void CheckInteraction() {
+    private void CheckInteractionText() {
         RaycastHit hit;
         Ray ray = new Ray(raycastPoint.transform.position, raycastPoint.transform.forward);
 
@@ -32,7 +68,7 @@ public class PlayerInteraction : MonoBehaviour {
         if (Physics.Raycast(ray, out hit, playerReach)) {
 
             // Check if is looking at an interactable object
-            if (hit.collider.tag == ConstVariables.InteractableTagName) {
+            if (hit.collider.GetComponent<Interactable>() != null) {
                 Interactable newInteractable = hit.collider.GetComponent<Interactable>();
                 Debug.Log(hit.collider); // DEBUG
 
@@ -55,6 +91,10 @@ public class PlayerInteraction : MonoBehaviour {
         else {
             DisableCurrentInteractable();
         }
+    }
+
+    private void CheckInteractable() {
+
     }
 
     private void SetNewCurrentInteractable(Interactable newInteractable) {
