@@ -2087,7 +2087,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 54d172feefc5ada43b0d3e3af6f4fbfa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  slotPrefab: {fileID: 0}
+  slotPrefab: {fileID: 8528368986462788400, guid: 6a8e8ff74977fff43a5b6d872aaf2804, type: 3}
   slotParentBackpack: {fileID: 648259741987194583}
   slotParentLoot: {fileID: 2130329209039747544}
   ItemParentCharacter: {fileID: 8436921255483767872}

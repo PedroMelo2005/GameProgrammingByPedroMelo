@@ -44,10 +44,14 @@ public class PlayerInteraction : MonoBehaviour {
                         if (hit.transform.CompareTag("Item")) {
                             //
                         }
-                        else if (hit.transform.CompareTag("Lootable")) {
+                        else if (hit.collider.CompareTag("Lootable")) {
                             StartCoroutine(InventoryManager.Instance.CreatePanel(InventoryManager.Instance.GetPanel(InventoryPanel.Type.Loot), hit.transform.parent.GetComponent<LootData>()));
                             UIManager.Instance.SetActiveLootPanel(true);
                             UIManager.Instance.SetCanvasInventory(true);
+                            currentInteractable.Interact();
+                        }
+                        else if (hit.collider.tag == "Interactable") {
+                            currentInteractable.Interact();
                         }
                     }
                 }
@@ -64,7 +68,7 @@ public class PlayerInteraction : MonoBehaviour {
         if (Physics.Raycast(ray, out hit, playerReach)) {
 
             // Check if is looking at an interactable object
-            if (hit.collider.tag == ConstVariables.InteractableTagName) {
+            if (hit.collider.GetComponent<Interactable>() != null) {
                 Interactable newInteractable = hit.collider.GetComponent<Interactable>();
                 Debug.Log(hit.collider); // DEBUG
 
@@ -79,14 +83,6 @@ public class PlayerInteraction : MonoBehaviour {
                 else {
                     DisableCurrentInteractable();
                 }
-            }
-            else if (hit.collider.CompareTag("Item")) {
-                //
-            }
-            else if (hit.transform.CompareTag("Lootable")) {
-                StartCoroutine(InventoryManager.Instance.CreatePanel(InventoryManager.Instance.GetPanel(InventoryPanel.Type.Loot), hit.transform.parent.GetComponent<LootData>()));
-                UIManager.Instance.SetActiveLootPanel(true);
-                UIManager.Instance.SetCanvasInventory(true);
             }
             else {
                 DisableCurrentInteractable();

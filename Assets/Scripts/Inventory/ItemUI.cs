@@ -32,4 +32,8 @@ public class ItemUI : MonoBehaviour {
         }
     }
 
+    public void RestartPosition() {
+
+    }
+
 }

@@ -33,6 +33,8 @@ public class UIManager : MonoBehaviour {
     public bool IsCombatMenuOpen => _isCombatMenuOpen;
     public bool IsPuzzleMenuOpen => _isPuzzleMenuOpen;
 
+    public bool isLockedUI = false;
+
     [SerializeField] private MenusLayout[] menusLayoutArray;
 
     [System.Serializable]
@@ -73,9 +75,7 @@ public class UIManager : MonoBehaviour {
     public void OnStartGame() {
         ShowInGameHud();
         HidePauseMenu();
-        /*
-        HideInventoryMenu();
-        */
+        SetCanvasInventory(false);
     }
 
     public void SetMenuLayout(Menus menus, bool setState) {
@@ -177,7 +177,6 @@ public class UIManager : MonoBehaviour {
     public void ShowPauseMenu() {
         SetMenuLayout(Menus.PauseMenu, true);
         HideInGameHud();
-        HideInventoryMenu();
         GameManager.Instance.PauseGame(true);
         Player.Instance.ActivateCursor();
         _isPauseMenuOpen = true;
